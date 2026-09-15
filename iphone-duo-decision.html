@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iPhone Duo: thirteen ways to get one</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16203A; --ink-soft:#3A4560; --muted:#6A7488;
+  --surface:#FBFAF7; --panel:#FFFFFF;
+  --rule:#D9DDE5; --rule-soft:#EAEDF2;
+  --good:#1D7A5F; --good-bg:#E6F2ED;
+  --risk:#9A3D2E; --risk-bg:#F7EBE8;
+  --flag:#8A6A15; --flag-bg:#F6F0DF;
+  --bar:#16203A; --bar-best:#1D7A5F; --bar-out:#A9B1C2;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--surface);color:var(--ink);
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-variation-settings:'wdth' 100,'wght' 400;
+  font-feature-settings:'tnum' 1,'lnum' 1;font-size:16px;line-height:1.55;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.num{font-variant-numeric:tabular-nums}
+
+/* masthead */
+.mast{border-bottom:1px solid var(--ink);padding:56px 0 28px}
+.mast h1{margin:0 0 18px;font-variation-settings:'wdth' 68,'wght' 800;
+  font-size:clamp(42px,8.2vw,92px);line-height:.93;letter-spacing:-.012em;max-width:14ch}
+.mast .sub{max-width:60ch;font-size:17px;color:var(--ink-soft);margin:0 0 22px}
+.facts{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule);margin-top:26px}
+.fact{flex:1 1 170px;padding:14px 18px 14px 0;border-right:1px solid var(--rule);margin-right:18px}
+.fact:last-child{border-right:0;margin-right:0}
+.fact b{display:block;font-variation-settings:'wdth' 85,'wght' 700;font-size:22px;line-height:1.1}
+.fact span{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+
+/* layout */
+.cols{display:grid;grid-template-columns:288px minmax(0,1fr);gap:44px;align-items:start;padding:40px 0 0}
+.cols > *{min-width:0}
+.panelcol{position:sticky;top:20px}
+
+/* controls */
+.ctrl{background:var(--panel);border:1px solid var(--ink);padding:20px}
+.ctrl h2{margin:0 0 4px;font-size:15px;font-variation-settings:'wdth' 88,'wght' 700}
+.ctrl .hint{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.4}
+details.field{border-bottom:1px solid var(--rule-soft)}
+details.field:last-of-type{border-bottom:0}
+details.field > summary{list-style:none;cursor:pointer;padding:8px 0;display:flex;
+  align-items:center;gap:8px;font-size:12.5px;font-variation-settings:'wght' 600;color:var(--ink)}
+details.field > summary::-webkit-details-marker{display:none}
+details.field > summary:hover .fval{color:var(--ink-soft)}
+details.field > summary:focus-visible{outline:2px solid var(--good);outline-offset:1px}
+.fval{margin-left:auto;font-variation-settings:'wght' 500;color:var(--muted);
+  font-size:11.5px;text-align:right;padding-left:10px;white-space:nowrap}
+.fbody{padding:1px 0 15px}
+.field .note{font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.4}
+.ctrl.nohelp .note{display:none}
+.ctrlbar{display:flex;gap:4px;margin:0 0 4px;flex-wrap:wrap}
+.ctrlbar button{font:inherit;font-size:11px;padding:4px 8px;border:1px solid var(--rule);
+  background:none;color:var(--muted);cursor:pointer;border-radius:2px}
+.ctrlbar button:hover{border-color:var(--ink-soft);color:var(--ink)}
+.ctrlbar button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:5px}
+.seg button{font:inherit;font-size:12.5px;font-variation-settings:'wght' 550;
+  padding:6px 10px;border:1px solid var(--rule);background:var(--panel);
+  color:var(--ink-soft);cursor:pointer;border-radius:2px;
+  transition:background .12s ease,color .12s ease,border-color .12s ease}
+.seg button:hover{border-color:var(--ink-soft)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.seg button:focus-visible{outline:2px solid var(--good);outline-offset:2px}
+input[type=range]{width:100%;accent-color:var(--ink);margin:2px 0 0}
+input[type=range]:focus-visible{outline:2px solid var(--good);outline-offset:3px}
+.rangeval{font-variation-settings:'wght' 700;font-size:14px}
+.reset{margin-top:18px;width:100%;font:inherit;font-size:12.5px;padding:8px;
+  background:none;border:1px dashed var(--rule);color:var(--muted);cursor:pointer;border-radius:2px}
+.reset:hover{border-color:var(--ink-soft);color:var(--ink)}
+
+/* sections */
+.sec{margin-bottom:56px}
+.sec > h2{font-variation-settings:'wdth' 78,'wght' 750;
+  font-size:clamp(24px,3.4vw,34px);line-height:1.08;margin:0 0 6px;letter-spacing:-.008em}
+.sec > .lede{color:var(--ink-soft);max-width:68ch;margin:0 0 26px;font-size:15.5px}
+
+/* option chips */
+.chipbar{border:1px solid var(--rule);background:var(--panel);padding:14px 16px;margin:0 0 24px}
+.chipbar .chiphead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:11px;flex-wrap:wrap}
+.chipbar .chiphead span{font-size:12.5px;color:var(--muted)}
+.chipbar .bulk{display:flex;gap:6px}
+.chipbar .bulk button{font:inherit;font-size:11.5px;padding:4px 9px;border:1px solid var(--rule);
+  background:none;color:var(--ink-soft);cursor:pointer;border-radius:2px}
+.chipbar .bulk button:hover{border-color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:12px;font-variation-settings:'wght' 550;padding:5px 10px;
+  border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;border-radius:2px;
+  display:flex;align-items:center;gap:6px;transition:background .12s,color .12s,border-color .12s}
+.chip[aria-pressed="false"]{background:none;color:var(--muted);border-color:var(--rule);text-decoration:line-through}
+.chip:focus-visible{outline:2px solid var(--good);outline-offset:2px}
+.chip .cn{font-variant-numeric:tabular-nums;opacity:.6}
+
+/* ladder */
+.ladder{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 154px;gap:16px;align-items:center;
+  padding:13px 0;border-bottom:1px solid var(--rule-soft)}
+.row .name{font-size:14px;font-variation-settings:'wght' 600;margin-bottom:6px;
+  display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.row .tag{font-size:10.5px;font-variation-settings:'wght' 600;padding:2px 6px;border-radius:2px;color:#fff;background:var(--bar-out)}
+.row .tag.best{background:var(--good)}
+.track{height:13px;background:var(--rule-soft);border-radius:1px;overflow:hidden}
+.fill{height:100%;background:var(--bar);width:0;transition:width .42s cubic-bezier(.22,.7,.3,1),background .25s ease}
+.fill.best{background:var(--bar-best)}
+.fill.dim{background:var(--bar-out)}
+.money{text-align:right}
+.money b{display:block;font-variation-settings:'wdth' 88,'wght' 750;font-size:19px;line-height:1.15}
+.money span{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
+.row.muted .name{color:var(--muted)}
+.lockrow{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+.locktrack{position:relative;flex:0 0 150px;height:6px;background:var(--rule-soft);border-radius:1px;overflow:hidden}
+.locktrack i{position:absolute;top:0;bottom:0;width:1px;background:var(--panel);z-index:2}
+.locktrack i.y1{left:33.333%} .locktrack i.y2{left:66.667%}
+.lockfill{height:100%;width:0;background:var(--risk);opacity:.5;
+  transition:width .42s cubic-bezier(.22,.7,.3,1)}
+.lockfill.mid{background:var(--flag)}
+.locklab{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.locklab .dot{margin-right:0}
+.eqlab{font-size:11px;color:var(--muted)}
+.eqlab.bad{color:var(--risk)}
+.npv{display:block;font-size:11px;font-variation-settings:'wght' 500;color:var(--muted);margin-top:2px}
+.money .real{margin-top:4px;padding-top:4px;border-top:1px solid var(--rule-soft)}
+.empty{padding:26px 0;color:var(--muted);font-size:14px}
+
+/* cards */
+.card{background:var(--panel);border:1px solid var(--ink);margin-bottom:22px}
+.cardhead{display:flex;gap:14px;align-items:flex-start;padding:18px 22px;border-bottom:1px solid var(--ink)}
+.cardhead .idx{font-variation-settings:'wdth' 70,'wght' 800;font-size:30px;line-height:.9;
+  color:var(--rule);flex:0 0 auto;min-width:40px}
+.cardhead h3{margin:0;font-size:19px;font-variation-settings:'wdth' 90,'wght' 700;line-height:1.2}
+.cardhead p{margin:4px 0 0;font-size:13.5px;color:var(--muted);max-width:70ch}
+.cardhead .head-money{margin-left:auto;text-align:right;flex:0 0 auto;padding-left:16px}
+.cardhead .head-money b{display:block;font-variation-settings:'wdth' 88,'wght' 750;font-size:24px;line-height:1.1}
+.cardhead .head-money span{font-size:11.5px;color:var(--muted)}
+.cardhead .headsub{font-size:11.5px;color:var(--muted);margin-top:5px;white-space:nowrap}
+.pills{margin-top:11px}
+.pill{display:inline-block;font-size:11.5px;font-variation-settings:'wght' 600;padding:3px 8px;border-radius:2px;margin:0 5px 5px 0}
+.pill.good{background:var(--good-bg);color:var(--good)}
+.pill.risk{background:var(--risk-bg);color:var(--risk)}
+.pill.flag{background:var(--flag-bg);color:var(--flag)}
+
+/* the fold: a spine down the left of every card body */
+.cardbody{display:grid;grid-template-columns:16px minmax(0,1fr)}
+.spine{position:relative;
+  background:linear-gradient(to right,transparent 7px,var(--rule) 7px,var(--rule) 8px,transparent 8px)}
+.spine span{position:absolute;left:5px;width:6px;height:20px;background:var(--ink);border-radius:3px}
+.spine .k1{top:20%} .spine .k2{top:62%}
+
+/* collapsible blocks */
+details.dd{border-bottom:1px solid var(--rule-soft)}
+details.dd:last-child{border-bottom:0}
+details.dd > summary{list-style:none;cursor:pointer;padding:12px 22px 12px 8px;
+  display:flex;align-items:center;gap:9px;font-size:12.5px;
+  font-variation-settings:'wght' 700;color:var(--ink-soft)}
+details.dd > summary::-webkit-details-marker{display:none}
+details.dd > summary:hover{color:var(--ink)}
+details.dd > summary:focus-visible{outline:2px solid var(--good);outline-offset:-2px}
+.caret{display:inline-block;width:8px;height:8px;flex:0 0 auto;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:rotate(-45deg) translate(-1px,-1px);transition:transform .16s ease}
+details[open] > summary .caret{transform:rotate(45deg) translate(-1px,-1px)}
+.peek{margin-left:auto;font-size:11.5px;font-variation-settings:'wght' 500;color:var(--muted);
+  text-align:right;padding-left:12px}
+.ddbody{padding:2px 22px 20px 8px}
+.ddbody p{margin:0 0 11px;font-size:14px;color:var(--ink-soft);line-height:1.58;max-width:74ch}
+.ddbody p:last-child{margin-bottom:0}
+.calc{width:100%;border-collapse:collapse;font-size:13.5px;max-width:560px}
+.calc td{padding:6px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+.calc td:last-child{text-align:right;font-variation-settings:'wght' 600;white-space:nowrap;padding-left:12px}
+.calc tr.total td{border-bottom:0;border-top:2px solid var(--ink);padding-top:10px;
+  font-variation-settings:'wght' 750;font-size:15.5px}
+.calc tr.sub td{color:var(--muted);font-size:12.5px;border-bottom:0;padding-top:2px}
+.neg{color:var(--good)}
+.bad{color:var(--risk)}
+.yr .ycost.bad{color:var(--risk)}
+.years{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);max-width:560px}
+.yr{background:var(--panel);padding:11px 12px}
+.yr .ylab{font-size:10.5px;color:var(--muted);font-variation-settings:'wght' 600;margin-bottom:5px}
+.yr .yworth{font-size:16px;font-variation-settings:'wdth' 88,'wght' 750;line-height:1.15}
+.yr .ycost{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.35}
+.pcbody{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px}
+.wex{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:14px}
+.wex h5{margin:0 0 8px;font-size:12.5px;font-variation-settings:'wght' 700}
+.wex .calc{max-width:none}
+@media (max-width:760px){.wex{grid-template-columns:1fr;gap:22px}}
+.pcbody h5{margin:0 0 9px;font-size:12px;font-variation-settings:'wght' 700}
+.pcbody h5.p{color:var(--good)} .pcbody h5.c{color:var(--risk)}
+.pcbody ul{margin:0;padding-left:16px;font-size:13.5px;color:var(--ink-soft)}
+.pcbody li{margin-bottom:7px;line-height:1.5}
+.pcbody li:last-child{margin-bottom:0}
+
+/* collapsible findings */
+details.finding{border-left:4px solid var(--risk);background:var(--risk-bg);margin:0 0 12px}
+details.finding.flagged{border-left-color:var(--flag);background:var(--flag-bg)}
+details.finding.calm{border-left-color:var(--good);background:var(--good-bg)}
+details.finding > summary{list-style:none;cursor:pointer;padding:15px 22px;
+  display:flex;align-items:center;gap:10px;font-size:15px;font-variation-settings:'wght' 700;color:var(--risk)}
+details.finding.flagged > summary{color:var(--flag)}
+details.finding.calm > summary{color:var(--good)}
+details.finding > summary::-webkit-details-marker{display:none}
+details.finding > summary:focus-visible{outline:2px solid var(--ink);outline-offset:-3px}
+details.finding > summary .caret{border-color:currentColor}
+details.finding .fbody{padding:0 22px 18px 22px}
+details.finding .fbody p{margin:0;font-size:14px;line-height:1.6;color:var(--ink);max-width:76ch}
+details.finding .fbody p + p{margin-top:9px}
+
+/* tables */
+.tablescroll{overflow-x:auto;border:1px solid var(--ink);background:var(--panel)}
+table.grid{border-collapse:collapse;width:100%;min-width:1180px;font-size:13.5px}
+table.grid th{text-align:left;padding:11px 14px;background:var(--ink);color:#fff;
+  font-variation-settings:'wght' 600;font-size:12px;white-space:nowrap}
+table.grid th.r,table.grid td.r{text-align:right}
+table.grid td{padding:10px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+table.grid td:first-child,table.grid td.nw{white-space:nowrap}
+table.grid td:last-child{white-space:normal;min-width:220px}
+table.grid tbody tr:last-child td{border-bottom:0}
+table.grid tbody tr.hl td{background:var(--good-bg)}
+table.grid td.strong{font-variation-settings:'wght' 700}
+table.grid td.dimcell{color:var(--muted)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.dot.g{background:var(--good)}.dot.y{background:var(--flag)}.dot.r{background:var(--risk)}
+.viewswitch{display:flex;gap:5px;margin-bottom:16px;flex-wrap:wrap}
+
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:1px;background:var(--rule);border:1px solid var(--ink)}
+.note-cell{background:var(--panel);padding:20px 22px}
+.note-cell h4{margin:0 0 8px;font-size:14.5px;font-variation-settings:'wght' 700}
+.note-cell p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.note-cell p + p{margin-top:9px}
+.callout{border-left:4px solid var(--risk);background:var(--risk-bg);padding:18px 22px;margin:0 0 26px}
+.callout h4{margin:0 0 7px;font-size:15px;font-variation-settings:'wght' 700;color:var(--risk)}
+.callout p{margin:0;font-size:14px;line-height:1.6;color:var(--ink)}
+.callout p + p{margin-top:9px}
+.callout.flagged{border-left-color:var(--flag);background:var(--flag-bg)}
+.callout.flagged h4{color:var(--flag)}
+.callout.calm{border-left-color:var(--good);background:var(--good-bg)}
+.callout.calm h4{color:var(--good)}
+.fineprint{font-size:12.5px;color:var(--muted);margin:14px 0 0;line-height:1.55;max-width:80ch}
+
+footer{border-top:1px solid var(--ink);margin-top:20px;padding:26px 0 60px;font-size:12.5px;color:var(--muted)}
+footer p{margin:0 0 9px;max-width:80ch;line-height:1.6}
+footer b{color:var(--ink-soft)}
+
+@media (max-width:980px){
+  .cols{grid-template-columns:minmax(0,1fr);gap:28px}
+  .panelcol{position:static}
+  .cardbody{grid-template-columns:10px minmax(0,1fr)}
+  .cardhead{flex-wrap:wrap}
+  .cardhead .head-money{margin-left:0;text-align:left;width:100%;padding-left:0;margin-top:10px}
+  .cardhead .headsub{white-space:normal}
+  .pcbody{grid-template-columns:1fr;gap:20px}
+  details.dd > summary{flex-wrap:wrap;padding-right:14px}
+  .peek{margin-left:0;width:100%;padding-left:17px;text-align:left;margin-top:3px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .row{grid-template-columns:minmax(0,1fr) 112px;gap:10px}
+  .money b{font-size:17px}
+  .locktrack{flex:0 0 100%}
+  .lockrow{gap:7px}
+}
+@media (prefers-reduced-motion:reduce){ .fill{transition:none} }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <h1>Thirteen ways to end up holding an iPhone Duo</h1>
+    <p class="sub">A cracked iPhone 15 Pro, a Verizon line, a company phone plan, and a $1,999 foldable landing on October 23. Flip the controls and watch which path actually wins.</p>
+    <div class="facts">
+      <div class="fact"><b class="num" id="f-price">$1,999</b><span>Duo, 256GB, before anything</span></div>
+      <div class="fact"><b>Oct 16 / Oct 23</b><span>Pre-order opens, then ships</span></div>
+      <div class="fact"><b class="num" id="f-resid">$880</b><span>What it is likely worth in 3 years</span></div>
+      <div class="fact"><b class="num" id="f-credit">$660</b><span>Verizon credit on a 15 Pro</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <div class="panelcol">
+    <div class="ctrl" id="ctrl">
+      <h2>Your assumptions</h2>
+      <p class="hint">Everything recalculates live. Refresh to start over.</p>
+      <div class="ctrlbar">
+        <button id="cExpand" type="button">Expand all</button>
+        <button id="cCollapse" type="button">Collapse all</button>
+        <button id="cNotes" type="button" aria-pressed="true">Help text</button>
+      </div>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Storage<span class="fval" id="fv-storage"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-storage" role="group" aria-label="Storage">
+            <button data-v="256">256GB</button><button data-v="512">512GB</button>
+            <button data-v="1024">1TB</button><button data-v="2048">2TB</button>
+          </div>
+          <p class="note" id="n-storage"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Cracked back at VZW<span class="fval" id="fv-crack"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-crack" role="group" aria-label="Crack accepted">
+            <button data-v="1">Yes, it passes</button><button data-v="0">No, downgraded</button>
+          </div>
+          <p class="note">The highest leverage unknown here. Verizon's published condition rules say front and back glass must be crack free, but its launch promos have historically waved damaged phones through.</p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Duo depreciation<span class="fval" id="fv-curve"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-curve" role="group" aria-label="Depreciation curve">
+            <button data-v="iphone">Like an iPhone</button><button data-v="fold">First gen discount</button>
+          </div>
+          <p class="note" id="n-curve"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Verizon path<span class="fval" id="fv-vz"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-vz" role="group" aria-label="Verizon path">
+            <button data-v="upgrade">Upgrade my line</button><button data-v="addline">Add a new line</button>
+          </div>
+          <p class="note" id="n-vz"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Verizon promo credit<span class="fval num" id="v-vzc"></span></summary>
+        <div class="fbody">
+          <label style="font-size:11.5px;color:var(--muted);display:block;margin-bottom:3px">For your 15 Pro</label>
+          <input type="range" id="r-vzc" min="0" max="1200" step="20" value="660" aria-label="Credit for the 15 Pro">
+          <label style="font-size:11.5px;color:var(--muted);display:block;margin:11px 0 3px">For a cheap filler phone</label>
+          <input type="range" id="r-vzf" min="0" max="1200" step="20" value="400" aria-label="Credit for a filler phone">
+          <p class="note" id="n-vzc"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Back glass repair<span class="fval" id="fv-repair"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-repair" role="group" aria-label="Repair route">
+            <button data-v="apple">Apple, $169</button><button data-v="local">Local shop, $80</button>
+            <button data-v="mail">Mail in, $50</button>
+          </div>
+          <p class="note" id="n-repair"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>What the 15 Pro fetches<span class="fval num" id="v-p15"></span></summary>
+        <div class="fbody">
+          <input type="range" id="r-p15" min="250" max="750" step="10" value="470" aria-label="15 Pro resale value">
+          <p class="note" id="n-p15"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Where you sell it<span class="fval" id="fv-resale"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-resale" role="group" aria-label="Resale channel">
+            <button data-v="private">Swappa or local</button><button data-v="ebay">eBay</button>
+            <button data-v="buyback">Instant buyback</button>
+          </div>
+          <p class="note" id="n-resale"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Company discount<span class="fval num" id="v-co"></span></summary>
+        <div class="fbody">
+          <input type="range" id="r-co" min="0" max="1000" step="10" value="630" aria-label="Company discount">
+          <p class="note" id="n-co"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Sales tax<span class="fval num" id="v-tax"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-tax" role="group" aria-label="Tax jurisdiction">
+            <button data-v="6">6.00%</button><button data-v="7.75">7.75%</button>
+            <button data-v="8.9">8.90%</button>
+          </div>
+          <input type="range" id="r-tax" min="0" max="11" step="0.05" value="6" aria-label="Sales tax rate" style="margin-top:9px">
+          <p class="note" id="n-tax"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>Count the phone you already own<span class="fval" id="fv-countOld"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-countOld" role="group" aria-label="Count the current phone">
+            <button data-v="0">No, it is already mine</button><button data-v="1">Yes, count it</button>
+          </div>
+          <p class="note" id="n-countOld"></p>
+        </div>
+      </details>
+
+      <details class="field" open>
+        <summary><span class="caret"></span>AppleCare One<span class="fval" id="fv-care"></span></summary>
+        <div class="fbody">
+          <div class="seg" id="seg-care" role="group" aria-label="AppleCare">
+            <button data-v="0">Leave it out</button><button data-v="1">Add it</button>
+          </div>
+          <p class="note">$19.99 a month. Apple has published no AppleCare+ price and no repair price for the Duo's folding screen or hinge. Adding this hits every path equally, so it shifts totals without reordering them.</p>
+        </div>
+      </details>
+
+      <button class="reset" id="reset">Reset everything</button>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="sec">
+      <h2>What each path costs you over three years</h2>
+      <p class="lede">The dark bar is net cash out of pocket over three years: the Duo plus tax, minus every credit, minus whatever you get for the 15 Pro, plus any repair or filler phone.</p>
+      <p class="lede">Ranking uses both numbers, weighted equally: cash over three years, and what the phone has cost you by month 24 once you net off whatever you are holding. Cash alone would hand the win to a path that leaves you with nothing at the end, so neither gets to decide on its own. Switch to either single measure with the buttons below.</p>
+      <p class="lede" style="margin-bottom:22px">The thin strip underneath is a three year timeline with a mark at each year, filled for as long as you are tied up. Next to it is what the phone would put toward a new one at the two year mark, after settling any balance and forfeiting any credits you have not yet received. Cheap and free are not the same thing, and the two bars disagree more than you would expect.</p>
+
+      <div class="viewswitch seg" id="seg-rank" role="group" aria-label="Rank by">
+        <button data-v="both">Rank by both, equally weighted</button>
+        <button data-v="net">Cash over 3 years only</button>
+        <button data-v="real" id="btn-real">Net cost at 2 years only</button>
+      </div>
+      <div class="chipbar">
+        <div class="chiphead">
+          <span id="chipcount"></span>
+          <div class="bulk">
+            <button id="showall">Show all</button>
+            <button id="hideall">Hide all</button>
+            <button id="showyours">My shortlist</button>
+          </div>
+        </div>
+        <div class="chips" id="chips"></div>
+      </div>
+
+      <div class="ladder" id="ladder"></div>
+      <p class="lede" style="margin-top:20px;margin-bottom:0" id="ladder-read"></p>
+    </section>
+
+    <section class="sec">
+      <h2>The things worth reading before anything else</h2>
+      <details class="finding">
+        <summary><span class="caret"></span>The lease looks competitive right up until you ask what you own</summary>
+        <div class="fbody">
+          <p>On plain cash the Apple lease sits mid pack, a few dollars either side of the company rows. That comparison is missing the thing that matters most. At month 24 you hand the phone back and hold nothing. Take the company route and the same month leaves you owning a Duo outright, worth about $1,139, free to sell or trade toward whatever is next.</p>
+          <p>Net that off and the ordering inverts. By the two year mark the company route has cost you less than nothing, because the 15 Pro sale and the phone in your hand together cover more than you put in. The Verizon route has cost around $539 and the lease $1,097. The lease is not a slightly worse option, it is the worst on the page, because every dollar you paid bought use rather than equity.</p>
+          <p>This is why the ranking weights both equally rather than picking one. On cash alone the lease would sit above the Verizon rows, which is plainly wrong for a path that ends with nothing in your hand. On net cost alone the cash you actually had to find each month disappears. Blended, the lease lands where it belongs, near the bottom.</p>
+        </div>
+      </details>
+      <details class="finding">
+        <summary><span class="caret"></span>The real credit kills the filler phone trick on economics, not just timing</summary>
+        <div class="fbody">
+          <p>Verizon advertised up to $1,020 upgrading a line. The credit an actual three year old Pro attracts is $660. That gap is the whole story: the tiers are graded by what the device is worth, not flat across a broad category, and a 15 Pro already sits well down the ladder.</p>
+          <p>Paths 03 and 04 needed the opposite to be true. Their entire premise was that a cheap handset collects the same credit as a good one, so you sell the good one and pocket the difference. If a 15 Pro only fetches $660, a phone cheap enough to buy as a filler fetches far less, and both paths now finish behind simply handing Verizon your own phone.</p>
+          <p>I have left them on the page with a slider so you can test it. Drag the filler credit up and watch where the crossover sits. At the default $400 they lose by $20 and $60 respectively, and that is before the 60 day rule, the two shipping cycles and the inspection you cannot appeal.</p>
+        </div>
+      </details>
+      <details class="finding">
+        <summary><span class="caret"></span><span>Your cracked back is sitting in front of roughly <b id="cx-gap" style="font-weight:inherit">$510</b></span></summary>
+        <div class="fbody">
+          <p>Verizon's trade in terms say condition is judged on whether the device powers on, whether the battery is damaged, and whether there are front or back screen cracks. Your back is cracked. If an inspector applies that rule literally, the promo value collapses to plain market value and the $660 quote goes with it.</p>
+          <p>A back glass repair converts that coin flip into a near certainty, and you can now get one for as little as $50 through a mail in service. <span id="cx-repair"></span> Flip the crack toggle to No and watch what happens to path 01.</p>
+        </div>
+      </details>
+      <details class="finding flagged">
+        <summary><span class="caret"></span>The 60 day rule probably kills the filler phone trick</summary>
+        <div class="fbody">
+          <p>Verizon requires that a traded in device has been active on your account for 60 consecutive days before the trade for many existing customer promos. The Duo ships October 23. A phone you buy today lands well inside that window, so a filler phone bought now would very likely be rejected for the promo tier.</p>
+          <p>Your 15 Pro has been on the line for years and clears it easily. That rule was already the main obstacle to paths 03 and 04. With the credit for a 15 Pro coming in well under the advertised ceiling, the economics have failed too, so those two are dead twice over rather than once.</p>
+        </div>
+      </details>
+      <details class="finding calm">
+        <summary><span class="caret"></span>The company plan is quietly the most flexible thing here</summary>
+        <div class="fbody">
+          <p>The phone pays off over 24 months and is yours from then on. No promo credits to forfeit, no carrier agreement, no buyout to fund at the end. That is a full year earlier than any Verizon path and it arrives with real equity rather than the lease's clean but empty exit.</p>
+          <p>It also costs nothing to start. The 15 Pro sale more than covers the tax and any repair, so the upfront column runs negative on all four company rows. At two years the phone puts its full resale value toward whatever comes next, while the Verizon paths at that same moment contribute $133.</p>
+          <p>With the Verizon credit landing at $660 rather than the advertised $1,020, the company plan now wins on price as well. Every company row finishes below every Verizon row, so the trade that used to be cheaper but more restrictive is now simply worse on both counts.</p>
+          <p>The one thing left to establish is what leaving inside those 24 months costs you on the remaining balance. At twelve months that is roughly $685 on a Duo.</p>
+        </div>
+      </details>
+      <details class="finding calm">
+        <summary><span class="caret"></span>The Verizon advantage does not exist until year three</summary>
+        <div class="fbody">
+          <p>Credits arrive monthly and you forfeit the rest the moment you change plans or leave. At twelve months you have banked a third of them, so the gap between financing through Verizon and just buying the phone is almost nothing. By month 36 it is the full credit. Open the year by year table below and compare path 01 against path 10 at each column.</p>
+        </div>
+      </details>
+      <details class="finding flagged">
+        <summary><span class="caret"></span>Upgrading at twelve months costs you money on six of these thirteen paths</summary>
+        <div class="fbody">
+          <p>If a phone you want more shows up next autumn, the Duo has to help pay for it. On the Verizon paths it does the opposite. At month 12 you would settle a device balance of about $1,333 and forfeit two thirds of a credit you have only partly received, against a phone worth about $1,479. The old phone leaves you several hundred dollars in the hole before you have spent a cent on the new one.</p>
+          <p>Buy it outright, or take either company route, and the same moment hands you the phone's full resale value toward whatever is next. That two thousand dollar swing is what the carrier subsidy actually costs, and it never appears in a price comparison. Switch the year table to the last view and read the year one column.</p>
+        </div>
+      </details>
+      <details class="finding calm">
+        <summary><span class="caret"></span>The Apple lease buyout is priced below what the phone will be worth</summary>
+        <div class="fbody">
+          <p>Apple sets the payoff at retail minus what you have already paid, rather than at projected market value the way a normal lease does. At month 24 that makes the buyout roughly $607 on a phone modelled to be worth about $1,139.</p>
+          <p>So paths 08 and 09 are the same contract read two different ways. Returning it costs you about $1,477 and leaves you with nothing. Buying it out costs exactly what buying outright costs, with the money spread over two years at zero percent. Returning is almost never the right call.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="sec">
+      <h2>Every path, in full</h2>
+      <p class="lede">Every block below folds away. Use these to set what shows on all thirteen at once, or open and close them card by card.</p>
+      <div class="chipbar">
+        <div class="chiphead">
+          <span id="seccount"></span>
+          <div class="bulk">
+            <button id="secall">Open everything</button>
+            <button id="secnone">Collapse everything</button>
+          </div>
+        </div>
+        <div class="chips" id="secchips"></div>
+      </div>
+      <div id="cards"></div>
+    </section>
+
+    <section class="sec">
+      <h2>Where you stand after year one, two and three</h2>
+      <p class="lede">The ladder assumes you ride every path to the end. This does not. Each column asks what happens if you stop there: what you are holding, what you would still owe, what the whole episode has cost you, and what the phone contributes if you want to trade it toward a new one.</p>
+      <div class="viewswitch seg" id="seg-view" role="group" aria-label="Year view">
+        <button data-v="worth">What you would hold</button>
+        <button data-v="owed">What you would still owe</button>
+        <button data-v="cost">What it cost you</button>
+        <button data-v="equity">What it puts toward your next phone</button>
+      </div>
+      <div class="tablescroll">
+        <table class="grid">
+          <thead><tr>
+            <th>Path</th><th class="r">End of year 1</th>
+            <th class="r">End of year 2</th><th class="r">End of year 3</th><th>Note</th>
+          </tr></thead>
+          <tbody id="ybody"></tbody>
+        </table>
+      </div>
+      <p class="fineprint" id="viewnote"></p>
+    </section>
+
+    <section class="sec">
+      <h2>Side by side</h2>
+      <p class="lede">The second column is what the new phone has cost you by month 24: everything paid, plus anything still owed, minus the resale value of whatever you are holding. It is the only column that charges the lease for ending with nothing. Open the panel below for the arithmetic.</p>
+      <details class="finding calm" style="margin-bottom:22px">
+        <summary><span class="caret"></span>How the year 2 cost number works</summary>
+        <div class="fbody">
+          <p>It is not the phone's value. It is what getting the new phone has cost you by the two year mark: everything you paid, plus anything you still owe, minus the resale value of whatever you are holding. Lower is better, and a negative number means the sale of your 15 Pro and the phone in your hand together cover more than you put in.</p>
+          <p>Your existing 15 Pro is not counted as a cost, since you already own it. Counting it would add the same figure to every row and move nothing, but there is a control for it if you want the number to read as a change in net worth instead.</p>
+          <div class="wex">
+            <div>
+              <h5>Path 06, company, fix the crack</h5>
+              <table class="calc"><tbody>
+                <tr id="wx-a1r"><td>You start owning a cracked 15 Pro worth</td><td class="num" id="wx-a1"></td></tr>
+                <tr><td>Cash out over 24 months: tax, repair, and the phone</td><td class="num" id="wx-a2"></td></tr>
+                <tr><td>Cash in from selling the repaired 15 Pro</td><td class="num neg" id="wx-a3"></td></tr>
+                <tr><td>Still owed at month 24</td><td class="num" id="wx-a4"></td></tr>
+                <tr><td>Resale value of the Duo you are holding</td><td class="num neg" id="wx-a5"></td></tr>
+                <tr class="total"><td id="wx-a6l">Net cost by year 2</td><td class="num" id="wx-a6"></td></tr>
+              </tbody></table>
+            </div>
+            <div>
+              <h5>Path 08, lease, hand it back</h5>
+              <table class="calc"><tbody>
+                <tr id="wx-b1r"><td>You start owning a cracked 15 Pro worth</td><td class="num" id="wx-b1"></td></tr>
+                <tr><td>Cash out over 24 months: the lease payments</td><td class="num" id="wx-b2"></td></tr>
+                <tr><td>Cash in from selling the 15 Pro as is</td><td class="num neg" id="wx-b3"></td></tr>
+                <tr><td>Still owed at month 24</td><td class="num" id="wx-b4"></td></tr>
+                <tr><td>Resale value of what you are holding</td><td class="num neg" id="wx-b5"></td></tr>
+                <tr class="total"><td id="wx-b6l">Net cost by year 2</td><td class="num" id="wx-b6"></td></tr>
+              </tbody></table>
+            </div>
+          </div>
+          <p style="margin-top:14px">The still owed line is what separates the Verizon paths from the company ones. At month 24 a Verizon Duo is worth the same $1,139, but you owe about $666 on it and have forfeited the credits you had not yet received, which is why path 01 lands several hundred dollars above the company rows despite ending with an identical phone.</p>
+        </div>
+      </details>
+
+      <div class="tablescroll">
+        <table class="grid">
+          <thead><tr>
+            <th>Path</th><th class="r">Net, 3 years</th><th class="r" id="th-real">Net cost by year 2</th>
+            <th class="r">Per month</th><th class="r">Upfront cash</th><th>Free to upgrade</th>
+            <th class="r">Toward your next phone, yr 2</th><th>Biggest risk</th>
+          </tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+          </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>Where the numbers come from.</b> Duo pricing and dates are from Apple's September 9 announcement and product pages. Verizon advertised up to $1,200 with a new myPlan line and $1,020 upgrading an existing one at the iPhone 18 Pro launch, applied as bill credits across 36 months. Those are ceilings for a current flagship trade-in. The model runs on $660 for a three year old Pro, and both that and the filler phone figure sit on sliders. Apple's trade in maximum for a clean iPhone 15 Pro was revised down to $370 on September 9. The Apple Upgrade lease rate comes from Apple's own $57.99 per month figure for the 256GB Duo on a 24 month term, and its published rule that the buyout equals retail minus what you have paid. Back glass repair at Apple is $169 for the 15 Pro, battery service is $99. The tax presets are illustrative rates covering a typical metro spread, and the slider takes any figure.</p>
+    <p><b>Where I am guessing.</b> Resale values run off a single slider you set yourself, anchored on a 256GB 15 Pro with the crack fixed, the battery still at 79%, sold privately. The default of $470 is built from Swappa's September listings, where a 15 Pro starts at $438 for the cheapest 128GB in fair condition. The adjustments around it, $90 off for a cracked back, $30 on for a genuine Apple panel, $60 on for a fresh battery, and 79% of private for an instant buyback, are my estimates rather than quotes. Every Duo resale figure is a model, since the phone does not ship until October 23. So are the $30 genuine panel premium, the $80 and $50 repair prices, the $180 filler phone, the $150 market value fallback, and the $20 monthly cost of an added Verizon line. Lease rates above 256GB are scaled from Apple's published rate.</p>
+    <p><b>On the year 2 cost column.</b> It measures at month 24 rather than 36, because that is where the paths diverge most and where the lease ends. It assumes you could sell the phone at the modelled resale value that month, which for a first generation foldable is the softest assumption on the page. Switch the depreciation control to the foldable curve to see how much of the company advantage survives a weaker used market.</p>
+    <p><b>Not modelled.</b> Any service included with a company plan, which at typical carrier rates would be worth more over three years than every other line on this page combined. Also excluded: the $79 case, the $129 folio, the charger Apple no longer includes, early termination fees, and the possibility that a corporate liable company handset is never yours to sell.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+var PRICES = {256:1999, 512:2199, 1024:2599, 2048:3199};
+var P18 = 1199;
+var REPAIR = {apple:169, local:80, mail:50};
+var RLABEL = {apple:'Apple', local:'local shop', mail:'mail in service'};
+var BATTERY = 99, DECOY = 180, VZ_FALLBACK = 150, ADDLINE_MO = 20, CARE_MO = 19.99;
+var ADDLINE_BONUS = 180; // Verizon's add-a-line offers ran $180 above its upgrade offers at launch
+var LEASE_RATE = 0.697;
+
+// Share of retail a phone fetches on a private sale at 12, 24 and 36 months
+var CURVE = {
+  iphone: [0.74, 0.57, 0.44],
+  fold:   [0.62, 0.44, 0.32]
+};
+// The 15 Pro is already three years old, so it decays off today's value
+var P15_CURVE = [0.63, 0.42, 0.28];
+
+// What your 15 Pro fetches. The slider sets one anchor: crack fixed with an
+// aftermarket panel, battery still at 79%, sold privately. Everything else moves off it.
+var CRACK_HIT = 90;    // what a buyer knocks off for a cracked back on a phone this cheap to fix
+var GENUINE_UP = 30;   // premium for an Apple panel, since iOS does not flag it
+var BATT_UP = 60;      // what a fresh genuine battery adds
+var EBAY_MARKUP = 1.12;// eBay asks run higher than Swappa
+var EBAY_FEE = 0.1325; // eBay final value fee
+var EBAY_SHIP = 12;
+var BUYBACK = 0.79;    // instant buyback services pay roughly a fifth less
+
+// The cracked 15 Pro you already own. Off by default: it is the same figure in every
+// path, so it shifts every number equally without telling you anything about the choice.
+function opening(){ return s.countOld ? resale('asis') : 0; }
+function REAL_SHORT(){ return s.countOld ? 'poorer by yr 2' : 'net cost by yr 2'; }
+function REAL_LONG(){ return s.countOld ? 'How much poorer at year 2' : 'Net cost by year 2'; }
+
+// Cash over three years and net cost at two years answer different questions and
+// disagree sharply. Weighting them equally stops either one crowning a bad winner.
+function rankMetric(open0){
+  if(s.rank === 'net')  return function(o){ return o.net; };
+  if(s.rank === 'real') return function(o){ return stand(o, 24, open0).cost; };
+  return function(o){ return (o.net + stand(o, 24, open0).cost) / 2; };
+}
+function BEST_TAG(){
+  return s.rank === 'net' ? 'cheapest cash'
+       : s.rank === 'real' ? 'lowest net cost' : 'best overall';
+}
+
+function resale(tier){
+  var gross;
+  if(tier === 'asis')      gross = s.p15 - CRACK_HIT;
+  else if(tier === 'full') gross = s.p15 + BATT_UP + (s.repair === 'apple' ? GENUINE_UP : 0);
+  else                     gross = s.p15 + (s.repair === 'apple' ? GENUINE_UP : 0);
+  if(s.resale === 'private') return gross;
+  if(s.resale === 'ebay')    return Math.max(0, gross*EBAY_MARKUP*(1-EBAY_FEE) - EBAY_SHIP);
+  return gross * BUYBACK;
+}
+
+var DEFAULTS = {storage:256, crack:1, curve:'iphone', vz:'upgrade', repair:'mail',
+                resale:'private', p15:470, vzc:660, vzf:400, co:630, tax:6, care:0, countOld:0, view:'cost', rank:'both'};
+var s = Object.assign({}, DEFAULTS);
+
+var ALL_IDS = ['keep','vz-direct','vz-fixed','sell-decoy','fix-sell-decoy','co-asis','co-crack',
+               'co-full','lease-return','lease-buy','outright','18pro-vz','18pro-co'];
+var SHORTLIST = ['vz-direct','co-asis','co-crack','lease-return'];
+function onlyShortlist(){
+  var m = {};
+  ALL_IDS.forEach(function(id){ if(SHORTLIST.indexOf(id) === -1) m[id] = true; });
+  return m;
+}
+var hidden = onlyShortlist();
+
+var SECTIONS = [
+  {k:'story', label:'How it plays out'},
+  {k:'math',  label:'The math'},
+  {k:'years', label:'Year 1, 2 and 3'},
+  {k:'pc',    label:'Pros and cons'}
+];
+var secDefault = {story:true, math:true, years:true, pc:false};
+var secOpen = {};
+function isOpen(id,k){
+  var key = id + ':' + k;
+  return (key in secOpen) ? secOpen[key] : !!secDefault[k];
+}
+
+
+function money(n){
+  var neg = n < -0.5;
+  return (neg ? '\u2212$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+}
+function plain(n){
+  return (n < -0.5 ? '\u2212' : '') + Math.abs(Math.round(n)).toLocaleString('en-US');
+}
+function money2(n){
+  return '$' + Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function label(g){ return g===1024 ? '1TB' : (g===2048 ? '2TB' : g+'GB'); }
+
+function model(){
+  var P = PRICES[s.storage], t = s.tax/100;
+  var tax = function(b){ return b*t; };
+  var rep = REPAIR[s.repair], repName = RLABEL[s.repair];
+  var sellAsIs  = resale('asis');
+  var sellFixed = resale('fixed');
+  var sellFull  = resale('full');
+  var care36 = s.care ? CARE_MO*36 : 0, care24 = s.care ? CARE_MO*24 : 0;
+  var careMo = s.care ? CARE_MO : 0;
+  var bonus = (s.vz === 'addline') ? ADDLINE_BONUS : 0;
+  var credit = s.vzc + bonus;              // what Verizon credits for your 15 Pro
+  var filler = s.vzf + bonus;              // what it credits for a cheap eligible handset
+  var creditCracked = s.crack ? credit : VZ_FALLBACK;
+  var addMo = (s.vz==='addline') ? ADDLINE_MO : 0;
+  var lineCost = addMo*36;
+  var lineLabel = addMo ? 'Second line, $'+ADDLINE_MO+' a month for 36' : null;
+  var cur = CURVE[s.curve];
+  var leaseMo = P*LEASE_RATE/24*(1+t);
+  var lease24 = leaseMo*24;
+  var buyout = (P - P*LEASE_RATE)*(1+t);
+  var o = [];
+
+  function duo(n){ return n===0 ? P : P*cur[n/12 - 1]; }
+  function p18v(n){ return n===0 ? P18 : P18*CURVE.iphone[n/12 - 1]; }
+  function p15v(n){ return n===0 ? sellFixed : sellFixed*P15_CURVE[n/12 - 1]; }
+  function amort(principal, term){
+    return function(n){ return principal * Math.max(0, term-n) / term; };
+  }
+  var none = function(){ return 0; };
+
+  o.push({
+    id:'keep', short:'Keep and fix', months:36, noDuo:true,
+    name:'Keep the 15 Pro and fix it',
+    blurb:'The baseline. What not upgrading actually costs',
+    net: rep + BATTERY,
+    upfront: rep + BATTERY,
+    lock:'None',
+    risk:'You are on a three year old phone with a two year old battery',
+    pills:[['good','No lock in'],['good','Cheapest by far'],['flag','No Duo']],
+    cash0: rep + BATTERY, mo:careMo, moTerm:36, owedAt:none, worthAt:p15v,
+    yearNote:'Cost here is mostly the 15 Pro depreciating on your shelf',
+    promo:null, liquid:'Any day you like', liquidTier:'g', lockMo:0,
+    tradeIn:'Yours outright and unlocked, so you can sell or trade it whenever you like. The catch is what it is worth: by year two a repaired 15 Pro fetches less than a decent pair of headphones, and by year three most buyback services stop caring.',
+    lines:[
+      ['Back glass repair, '+repName, rep],
+      ['Battery service at Apple, you are at 79%', BATTERY]
+    ],
+    story:[
+      'Worth pricing before anything else, because it is the number every other path has to beat.',
+      'Your battery is under the 80% threshold where Apple considers it worn, and the back glass is the cheapest repair Apple has ever offered on a Pro, down from $499 on the 14 Pro because the 15 Pro frame lets the panel come off on its own.',
+      'For under three hundred dollars you get a phone that will run iOS comfortably for another two years. If the Duo turns out to have a thousand dollar screen repair, this looks smart in hindsight.'
+    ],
+    pros:[
+      'Cheapest outcome on the page by an order of magnitude',
+      'No contract, no credit check, no line commitment',
+      'A fresh battery on a 15 Pro will run iOS comfortably into 2028',
+      'Lets you wait out the Duo\u2019s unpublished repair pricing and first generation durability reviews',
+      'Fixing the crack also protects whatever you eventually sell it for'
+    ],
+    cons:[
+      'You do not get the Duo',
+      'The 15 Pro keeps shedding roughly $15 to $25 of value a month while you wait',
+      'Carrier launch promos are at their most generous right now and will thin out',
+      'Another year on a three year old camera and an A17 Pro'
+    ]
+  });
+
+  o.push({
+    id:'vz-direct', short:'Trade to Verizon', months:36,
+    name:'Trade the cracked 15 Pro straight to Verizon',
+    blurb:'Your option 1. Simplest path, and the one the crack toggle punishes',
+    net: P + tax(P) - creditCracked + lineCost + care36,
+    upfront: tax(P),
+    lock:'36 months on myPlan',
+    risk: s.crack ? 'Plan change or line cancellation forfeits remaining credits'
+                  : 'Crack rejected, you just lost '+money(credit-VZ_FALLBACK)+' of credit',
+    pills: s.crack ? [['good','One transaction'],['risk','36 month lock in'],['flag','Crack is unverified']]
+                   : [['risk','Promo downgraded'],['risk','36 month lock in']],
+    cash0: tax(P), mo: P/36 - creditCracked/36 + addMo + careMo, moTerm:36,
+    owedAt: amort(P,36), worthAt: duo,
+    yearNote:'Exit early and you forfeit every credit you have not yet received',
+    promo:{total:creditCracked, term:36}, liquid:'Month 36, not before', liquidTier:'r', lockMo:36,
+    tradeIn:'The hardest path on this page to leave. Upgrading early means settling the device balance and forfeiting every promo credit you have not yet received, which at month 12 is about '+money(creditCracked*24/36)+'. Verizon will happily take the phone mid contract, but it pays off the balance out of the trade value and the unpaid credits still die. Month 36 is the first genuinely free exit.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Sales tax at '+s.tax+'%, due at order', tax(P)],
+               [s.crack ? 'Verizon promo credit, 36 months' : 'Market value only, promo rejected', -creditCracked]];
+      if(lineCost) L.push([lineLabel, lineCost]);
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'You hand Verizon the phone, they hand you a credit spread across 36 bills, and you never touch a marketplace listing. There is real value in that simplicity.',
+      'The catch is that you get no cash for the 15 Pro at all. Its entire worth is consumed by a promo Verizon would have given you for a much cheaper phone, which is exactly the inefficiency paths 03 and 04 try to exploit.',
+      'The credit is not money in hand. It is about '+money2(creditCracked/36)+' shaved off each of the next 36 bills, and it stops the moment you change plans, cancel the line, or move the number. Three years is a long time to be unable to shop your own service.'
+    ],
+    pros:[
+      'One transaction, one place, nothing to list or ship separately',
+      'Largest credit available without changing carriers',
+      'No cash upfront beyond sales tax',
+      'Your 15 Pro clears the 60 day active on account rule easily, unlike a filler phone',
+      'Verizon has historically accepted damaged phones on launch promos even when its own rules say otherwise'
+    ],
+    cons:[
+      'The cracked back may disqualify the promo, and you find out after you have committed',
+      'You get zero cash for the 15 Pro, its whole value is absorbed into the credit',
+      '36 months of plan lock in, and any change forfeits the unpaid balance of the credit',
+      'Credits are bill offsets rather than money, so they are worth nothing if you leave Verizon',
+      'The advantage over just buying the phone is almost zero until year three'
+    ]
+  });
+
+  o.push({
+    id:'vz-fixed', short:'Repair then trade', months:36,
+    name:'Repair the back, then trade to Verizon',
+    blurb:'Not on your list, and probably the best risk adjusted version of path 01',
+    net: P + tax(P) - credit + rep + lineCost + care36,
+    upfront: tax(P) + rep,
+    lock:'36 months on myPlan',
+    risk:'You spend the repair money and Verizon would have taken it cracked anyway',
+    pills:[['good','Protects the full credit'],['good','Still one transaction'],['risk','36 month lock in']],
+    cash0: tax(P) + rep, mo: P/36 - credit/36 + addMo + careMo, moTerm:36,
+    owedAt: amort(P,36), worthAt: duo,
+    yearNote:'Same shape as path 01, with the promo risk removed',
+    promo:{total:credit, term:36}, liquid:'Month 36, not before', liquidTier:'r', lockMo:36,
+    tradeIn:'Same trap as path 01. Three years of device payments and promo credits that evaporate on early exit. The repair protects the credit but does nothing for your ability to move.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Sales tax at '+s.tax+'%', tax(P)],
+               ['Back glass repair, '+repName, rep],['Verizon promo credit, full tier', -credit]];
+      if(lineCost) L.push([lineLabel, lineCost]);
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'This is path 01 with one line item added, and it is the trade I would make.',
+      'You are spending '+money(rep)+' to remove the possibility of losing '+money(credit-VZ_FALLBACK)+'. That is worth doing if the chance of rejection is anything above roughly one in '+Math.round((credit-VZ_FALLBACK)/rep)+', and given that Verizon names back glass cracks explicitly in its own condition rules, it is plainly above that.',
+      'Note this is a different argument from repairing to raise resale value. Here the repair is not buying a better price, it is buying certainty on a credit worth many times the repair.'
+    ],
+    pros:[
+      'Removes the single biggest downside risk on the page for between $50 and $169',
+      'Keeps everything else about path 01 intact',
+      'A clean phone leaves nothing for an inspector to argue about',
+      'The repair is worth doing anyway if you ever plan to sell the phone instead'
+    ],
+    cons:[
+      'You may be paying for certainty you did not need',
+      'Adds several days of turnaround before you can order',
+      'Still 36 months of plan lock in',
+      'Still zero cash for the 15 Pro'
+    ]
+  });
+
+  o.push({
+    id:'sell-decoy', short:'Sell, trade a filler', months:36,
+    name:'Sell the 15 Pro as is, trade a cheap filler phone',
+    blurb:'Your option 2. The arbitrage, which your $660 quote has taken apart',
+    net: P + tax(P) - filler - sellAsIs + DECOY + lineCost + care36,
+    upfront: tax(P) + DECOY - sellAsIs,
+    lock:'36 months on myPlan',
+    risk:'The 60 day rule, and whether a cheap phone hits the top tier at all',
+    pills:[['risk','Premise has failed'],['risk','60 day rule likely blocks it'],['flag','Test it with the slider']],
+    cash0: tax(P) + DECOY - sellAsIs, mo: P/36 - filler/36 + addMo + careMo, moTerm:36,
+    owedAt: amort(P,36), worthAt: duo,
+    yearNote:'The cash from the 15 Pro lands upfront, the credit lands slowly',
+    promo:{total:filler, term:36}, liquid:'Month 36, not before', liquidTier:'r', lockMo:36,
+    tradeIn:'You got the 15 Pro money upfront, which helps your cash position but not your flexibility. The Duo still sits on a 36 month payment plan with credits you forfeit if you move, so the phone is just as trapped as path 01.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Sales tax at '+s.tax+'%', tax(P)],
+               ['Filler phone, used and eligible', DECOY],
+               ['Sell the 15 Pro, cracked, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellAsIs],
+               ['Verizon promo credit, filler phone tier', -filler]];
+      if(lineCost) L.push([lineLabel, lineCost]);
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'The logic was sound in the abstract. If Verizon priced its promo off a broad tier rather than the device itself, you could feed it the cheapest qualifying handset, sell the good one, and pocket the gap.',
+      'The real number settles that. Verizon credits '+money(s.vzc)+' on a 15 Pro against an advertised ceiling of $1,020, which means the tiers are graded by device value. A phone cheap enough to buy as a filler sits far below a three year old Pro, so there is no gap left to capture.',
+      'At the current assumptions this path finishes '+money(Math.abs((P+tax(P)-filler-sellAsIs+DECOY) - (P+tax(P)-creditCracked)))+' behind simply handing Verizon your own phone. Drag the filler credit slider up to find the point where it would have worked. It needs to reach about '+money(credit - sellAsIs + DECOY)+' before the arithmetic turns.',
+      'And that is before the practical obstacles. Verizon requires many existing customer trade ins to have been active on your account for 60 consecutive days, which a phone bought in September for an October launch will not clear, and you would be running two shipping cycles through an inspection you cannot appeal.'
+    ],
+    pros:[
+      'You get real cash for the 15 Pro instead of a bill credit you can only spend on Verizon',
+      'Works whether or not you ever repair the crack',
+      'The cash arrives upfront rather than dribbling in over three years'
+    ],
+    cons:[
+      'The gap it was built to capture does not exist at a credit of '+money(s.vzc),
+      'It finishes behind path 01, which is the same purchase without any of the work',
+      'The 60 day active on account rule almost certainly blocks this for an October launch',
+      'Tier one wording may exclude cheap handsets entirely, and you only find out at inspection',
+      'Two shipping cycles and a condition assessment you cannot appeal',
+      'You are juggling three phones and may be briefly without one',
+      'If the filler is rejected you eat both its cost and the credit loss'
+    ]
+  });
+
+  o.push({
+    id:'fix-sell-decoy', short:'Repair, sell, filler', months:36,
+    name:'Repair it, sell it, then trade a filler phone',
+    blurb:'Your option 3. The repair still works, the arbitrage around it does not',
+    net: P + tax(P) - filler - sellFixed + rep + DECOY + lineCost + care36,
+    upfront: tax(P) + rep + DECOY - sellFixed,
+    lock:'36 months on myPlan',
+    risk:'Same 60 day problem, plus you front the repair cost',
+    pills:[['risk','Premise has failed'],['risk','60 day rule likely blocks it'],['risk','Most moving parts']],
+    cash0: tax(P) + rep + DECOY - sellFixed, mo: P/36 - filler/36 + addMo + careMo, moTerm:36,
+    owedAt: amort(P,36), worthAt: duo,
+    yearNote:'Identical to path 03 once the phone is sold, only the opening cash differs',
+    promo:{total:filler, term:36}, liquid:'Month 36, not before', liquidTier:'r', lockMo:36,
+    tradeIn:'Identical to path 03 on the way out. All the cleverness here happens before the Duo arrives, and none of it makes the Duo easier to leave.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Sales tax at '+s.tax+'%', tax(P)],
+               ['Back glass repair, '+repName, rep],['Filler phone, used and eligible', DECOY],
+               ['Sell the repaired 15 Pro, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellFixed],
+               ['Verizon promo credit, filler phone tier', -filler]];
+      if(lineCost) L.push([lineLabel, lineCost]);
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'This is path 03 with a repair bolted on, and the repair is the only part that still works. A '+repName+' job costs '+money(rep)+' and lifts your sale price by '+money(sellFixed-sellAsIs)+', a gain of '+money(sellFixed-sellAsIs-rep)+'. At the $50 mail in route that is real money. Apple at $169 goes negative, because its genuine panel only adds about $30 and that does not cover the extra spend.',
+      'The problem is everything around it. A credit of '+money(s.vzc)+' against an advertised $1,020 shows the promo tiers track device value, so the filler phone collects far less than your own phone would. That gap is what this path was built to harvest and it is not there.',
+      'At the current assumptions this finishes '+money(Math.abs((P+tax(P)-filler-sellFixed+rep+DECOY) - (P+tax(P)-creditCracked)))+' behind path 01, which is the same purchase with none of the steps. If you want the repair, take it to path 02 or to one of the company rows where it actually pays.'
+    ],
+    pros:[
+      'Highest sale price you can get for the 15 Pro',
+      'At the $50 mail in route the repair genuinely pays for itself',
+      'If Verizon later rejects your filler phone you still have a clean phone to fall back on'
+    ],
+    cons:[
+      'The arbitrage it depends on is gone at a credit of '+money(s.vzc),
+      'The most moving parts of any path here, for a result behind path 01',
+      'Same 60 day rule problem as path 03',
+      'Apple as the repair route makes the whole exercise net negative',
+      'You front the repair and the filler before any money comes back',
+      'A non genuine panel is disclosed in iOS and buyers will use it to negotiate'
+    ]
+  });
+
+  var coPrice = Math.max(0, P - s.co);
+  var coTax = tax(coPrice);
+
+  o.push({
+    id:'co-asis', short:'Company, sell as is', months:36,
+    name:'Company pricing, sell the 15 Pro as is',
+    blurb:'Your option 4, simplest version. Take the discount and offload the cracked phone untouched',
+    net: coPrice + coTax - sellAsIs + care36,
+    upfront: coTax - sellAsIs,
+    lock:'24 months, then yours',
+    risk:'Leaving before month 24 leaves a balance on a phone you cannot yet sell',
+    pills:[['good','Fastest of the three'],['good','No repair risk'],['flag','Yours at month 24']],
+    cash0: coTax - sellAsIs, mo: coPrice/24 + careMo, moTerm:24,
+    paidAt: function(n){ return coTax - sellAsIs + (coPrice/24)*Math.min(n,24) + careMo*Math.min(n,36); },
+    owedAt: amort(coPrice,24), worthAt: duo,
+    promo:null, liquid:'Month 24, then yours', liquidTier:'y', lockMo:24,
+    yearNote:'Paid off at month 24, and yours outright from then on',
+    tradeIn:'The handset is yours, but only after it is paid off at month 24. Until then you are carrying a balance on a phone you cannot sell, and leaving inside that window means settling it. From month 24 onward you own an unlocked phone free and clear, which is as good a position to trade from as buying outright, and you got there without a carrier agreement.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Corporate discount', -s.co],
+               ['Sales tax at '+s.tax+'% on the discounted price', coTax],
+               ['Sell the 15 Pro untouched, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellAsIs]];
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'The cleanest of the three. You take the corporate price on the Duo, list the 15 Pro exactly as it sits, and you are done inside a week.',
+      'A cracked back narrows your buyer pool but does not close it. Buyback services still quote on damaged phones, and marketplace buyers who intend to case the thing anyway will take the discount happily. You are looking at roughly '+money(sellAsIs)+' through the channel you have selected.',
+      'What this version buys you is speed and certainty. No shop, no shipping the phone away, no waiting to find out whether a repair changed anything. Against the other two it costs '+money((coPrice+coTax-sellAsIs) - (coPrice+coTax+rep-sellFixed))+' more than fixing the crack first, which is real but small.',
+      'Two things are now settled that were open before. You keep the 15 Pro, so the sale proceeds here are real money. And the Duo itself becomes yours once it is paid off at month 24, which means it is a real asset rather than a corporate handset you hand back. The catch is the window in between: for two years you are carrying a balance on a phone you cannot sell, and walking away inside that window means settling it.'
+    ],
+    pros:[
+      'The fastest route to cash, with nothing to send away and nothing to go wrong',
+      'You keep and sell the 15 Pro, worth about '+money(sellAsIs)+' that the Verizon paths never see',
+      'Free service, which you asked me to exclude but which dwarfs every other number here',
+      'Paid off in 24 months rather than Verizon\u2019s 36, and no credit check or carrier agreement',
+      'No risk of a repair going badly or a shop holding the phone longer than promised'
+    ],
+    cons: [
+      'The lowest sale price of the three, roughly $110 under a repaired phone',
+      'A cracked back cuts your buyer pool and invites lowball offers',
+      'The $630 is still your estimate rather than a quoted figure',
+      'You cannot sell the phone until it is paid off at month 24',
+      'Leaving inside the 24 months means settling whatever is left on the handset',
+      'MDM enrolment on a phone you also use personally',
+      'Cannot be combined with Apple Upgrade, which excludes business purchase programs',
+      'If you leave, the phone and possibly the number go with the job'
+    ]
+  });
+
+  o.push({
+    id:'co-crack', short:'Company, fix crack', months:36,
+    name:'Company pricing, fix the crack, then sell the 15 Pro',
+    blurb:'The middle version, and at the $50 mail in route the only one that pays for itself',
+    net: coPrice + coTax + rep - sellFixed + care36,
+    upfront: coTax + rep - sellFixed,
+    lock:'24 months, then yours',
+    risk:'With Apple as the repair route this costs more than selling the 15 Pro untouched',
+    pills:[['good','Best margin of the three'],['flag','Depends on repair route'],['flag','Yours at month 24']],
+    cash0: coTax + rep - sellFixed, mo: coPrice/24 + careMo, moTerm:24,
+    paidAt: function(n){ return coTax + rep - sellFixed + (coPrice/24)*Math.min(n,24) + careMo*Math.min(n,36); },
+    owedAt: amort(coPrice,24), worthAt: duo,
+    promo:null, liquid:'Month 24, then yours', liquidTier:'y', lockMo:24,
+    yearNote:'Paid off at month 24, and yours outright from then on',
+    tradeIn:'Tied up until month 24 while the handset pays off, then yours outright with no balance and no credits to forfeit. That is a full year earlier than any Verizon path, and unlike the lease there is no buyout to fund at the end.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Corporate discount', -s.co],
+               ['Sales tax at '+s.tax+'% on the discounted price', coTax],
+               ['Back glass repair, '+repName, rep],
+               ['Sell the repaired 15 Pro, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellFixed]];
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'A '+repName+' repair costs '+money(rep)+' and lifts the sale price from '+money(sellAsIs)+' to '+money(sellFixed)+'. That is a net gain of '+money(sellFixed - sellAsIs - rep)+' against selling it untouched.',
+      'Which repair route you pick decides whether this is worth doing at all. The $50 mail in service clears a real margin. The $80 walk in shop clears a thin one. Apple at $169 goes negative, because the genuine panel only adds about $30 to the price and that does not cover the extra $119 you spent.',
+      'The other thing a clean back buys you is a faster sale. A phone listed without damage sits in a much larger search bracket and attracts fewer hagglers, which matters more than the headline number suggests if you want this done before the Duo arrives on October 23.',
+      'Two things are now settled that were open before. You keep the 15 Pro, so the sale proceeds here are real money. And the Duo itself becomes yours once it is paid off at month 24, which means it is a real asset rather than a corporate handset you hand back. The catch is the window in between: for two years you are carrying a balance on a phone you cannot sell, and walking away inside that window means settling it.'
+    ],
+    pros:[
+      'At the $50 mail in route the repair pays for itself and then some',
+      'A clean phone sells faster and to a wider pool than a cracked one',
+      'You keep and sell the 15 Pro, which the Verizon paths never let you do',
+      'Free service, excluded from these numbers but worth more than all of them combined',
+      'No consumer lock in, no device payment agreement, no credit check'
+    ],
+    cons: [
+      'Goes net negative if you use Apple at $169 rather than a cheaper route',
+      'An aftermarket panel is flagged in iOS settings and buyers use it to negotiate',
+      'The phone is away for several days on the mail in route',
+      'The $630 is still your estimate rather than a quoted figure',
+      'You cannot sell the phone until it is paid off at month 24',
+      'Leaving inside the 24 months means settling whatever is left on the handset',
+      'MDM enrolment on a phone you also use personally',
+      'Cannot be combined with Apple Upgrade, which excludes business purchase programs',
+      'If you leave, the phone and possibly the number go with the job'
+    ]
+  });
+
+  o.push({
+    id:'co-full', short:'Company, fix both', months:36,
+    name:'Company pricing, fix the crack and the battery, then sell',
+    blurb:'The most thorough version, and the one where the arithmetic stops cooperating',
+    net: coPrice + coTax + rep + BATTERY - sellFull + care36,
+    upfront: coTax + rep + BATTERY - sellFull,
+    lock:'24 months, then yours',
+    risk:'The battery costs $99 and adds about $60, so it loses money on a sale',
+    pills:[['good','Highest sale price'],['risk','Battery does not pay back'],['flag','Yours at month 24']],
+    cash0: coTax + rep + BATTERY - sellFull, mo: coPrice/24 + careMo, moTerm:24,
+    paidAt: function(n){ return coTax + rep + BATTERY - sellFull + (coPrice/24)*Math.min(n,24) + careMo*Math.min(n,36); },
+    owedAt: amort(coPrice,24), worthAt: duo,
+    promo:null, liquid:'Month 24, then yours', liquidTier:'y', lockMo:24,
+    yearNote:'Paid off at month 24, and yours outright from then on',
+    tradeIn:'Tied up until month 24, then yours outright. Worth noting that if you end up keeping the 15 Pro as a spare rather than selling it, this is the version that makes sense, since a fresh battery is worth far more in use than it is on a listing.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Corporate discount', -s.co],
+               ['Sales tax at '+s.tax+'% on the discounted price', coTax],
+               ['Back glass repair, '+repName, rep],
+               ['Battery service at Apple, you are at 79%', BATTERY],
+               ['Sell the fully sorted 15 Pro, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellFull]];
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'This gets you the highest sale price of the three at '+money(sellFull)+', and it still finishes '+money(Math.abs((coPrice+coTax+rep+BATTERY-sellFull) - (coPrice+coTax+rep-sellFixed)))+' behind fixing the crack alone.',
+      'The reason is simple. Apple charges $99 for the battery and a fresh cell adds roughly $60 to what a buyer will pay. Batteries are the one component where the genuine part really matters, because a third party cell triggers a permanent service warning in iOS that buyers absolutely notice, so there is no cheap version of this repair the way there is for the back glass.',
+      'The $60 uplift is my estimate and it is the softest number on this page. Your phone is at 79%, which is under the threshold where iOS starts nagging, and clearing that warning may move you from the "needs work" bracket into the "mint" one in a buyer\u2019s head. If it does, the uplift is larger than $60 and this path catches up. I would not bet on it.',
+      'Where this version genuinely wins is if you are not selling. A repaired, re-batteried 15 Pro is a perfectly good backup phone, travel phone, or handset for someone in the family, and it will run iOS into 2028. Judged as a sale, it is the worst of the three. Judged as a second device, it is the only one that makes sense.',
+      'Two things are now settled that were open before. You keep the 15 Pro, so the sale proceeds here are real money. And the Duo itself becomes yours once it is paid off at month 24, which means it is a real asset rather than a corporate handset you hand back. The catch is the window in between: for two years you are carrying a balance on a phone you cannot sell, and walking away inside that window means settling it.'
+    ],
+    pros:[
+      'The highest sale price of the three at '+money(sellFull)+', and the easiest of the three to actually sell',
+      'Clears the iOS battery service warning, which is the thing buyers screenshot and haggle over',
+      'The right version if you might keep the 15 Pro as a spare instead of selling it',
+      'You keep and sell the 15 Pro at all, which the Verizon paths never permit',
+      'Free service, excluded here but larger than every other figure on the page'
+    ],
+    cons: [
+      'The battery costs $99 and returns roughly $60, so it loses money on a sale',
+      'No cheap version exists, since a third party battery triggers a permanent iOS warning',
+      'The $60 uplift is the softest estimate on this page',
+      'Two repairs means the longest wait before you can list it',
+      'The $630 is still your estimate rather than a quoted figure',
+      'You cannot sell the phone until it is paid off at month 24',
+      'Leaving inside the 24 months means settling whatever is left on the handset',
+      'MDM enrolment on a phone you also use personally',
+      'Cannot be combined with Apple Upgrade, which excludes business purchase programs',
+      'If you leave, the phone and possibly the number go with the job'
+    ]
+  });
+
+  o.push({
+    id:'lease-return', short:'Lease, return at 24', months:24,
+    name:'Apple Upgrade lease, hand it back at 24 months',
+    blurb:'Your option 5. Note that Apple killed the old iPhone Upgrade Program in July',
+    net: lease24 - sellAsIs + care24,
+    upfront: -sellAsIs,
+    lock:'24 months, with fees to exit early',
+    risk:'You pay about 70% of retail and own nothing at the end',
+    pills:[['good','Nothing upfront'],['good','Clean exit at 24 months'],['risk','You own nothing at the end']],
+    cash0: -sellAsIs, mo: leaseMo + careMo, moTerm:24,
+    owedAt: function(n){ return leaseMo*Math.max(0,24-n); },
+    worthAt: function(n){ return 0; },
+    yearNote:'By year three the lease has ended and you have had no phone for twelve months',
+    promo:null, liquid:'Month 24, by design', liquidTier:'y', lockMo:24,
+    tradeIn:'The only path actually built for upgrading. At month 24 you hand the phone back and start a new lease, with no residual risk, no listing to write and no buyer to meet. What you give up is equity: you have nothing to sell, so the swap contributes nothing toward the next phone. Before month 24 there is no exit at all short of paying the remaining months.',
+    lines: [
+      [money2(leaseMo/(1+t))+' a month for 24 months', lease24/(1+t)],
+      ['Tax on the lease payments at '+s.tax+'%', lease24 - lease24/(1+t)],
+      ['Sell the 15 Pro, cracked, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellAsIs]
+    ].concat(s.care ? [['AppleCare One, 24 months', care24]] : []),
+    story:[
+      'The old iPhone Upgrade Program is gone. What replaced it in July is a Klarna lease, and it behaves differently in one important way: you are renting, not building equity.',
+      'Twenty four payments of '+money2(leaseMo)+' including tax cover about seventy percent of retail, and at the end you hand it back and walk away. Klarna charges nothing for the financing itself.',
+      'Open the year by year table and this path looks bad, because at month 24 you have spent '+money(lease24)+' and hold nothing. The next path is the same lease with the buyout taken, and it is a completely different outcome.',
+      'One caution specific to this device. Klarna assesses damage when you hand the phone back, and without AppleCare+ you pay the full assessed cost. On a foldable whose hinge and inner panel have no published repair price, that is an open ended liability on a phone you do not own.'
+    ],
+    pros:[
+      'Nothing upfront at all, and the 15 Pro sale actually puts you in credit on day one',
+      'Unlocked handset with no carrier lock in',
+      'A clean exit in 24 months if the first generation foldable turns out to be a mistake',
+      'Apple Card holders get 3% back on lease payments',
+      'No large depreciating asset sitting on your balance sheet'
+    ],
+    cons:[
+      'Cannot be combined with the Verizon credit, which is the whole trade',
+      'You end up having paid about 70% of retail and owning nothing',
+      'Returning is almost always worse than buying out, because the buyout is priced below likely resale',
+      'Klarna assesses damage at return and bills the full cost without AppleCare+',
+      'Ending it early means paying the remaining months',
+      'Requires a plan from AT&T, Verizon or T-Mobile, and no MVNOs'
+    ]
+  });
+
+  o.push({
+    id:'lease-buy', short:'Lease, buy out at 24', months:36,
+    name:'Apple Upgrade lease, then buy it out at 24 months',
+    blurb:'The same lease, read correctly. Zero percent financing with an option attached',
+    net: P + tax(P) - sellAsIs + care36,
+    upfront: -sellAsIs,
+    lock:'24 months of lease payments',
+    risk:'Same damage assessment exposure while it is still Klarna\u2019s phone',
+    pills:[['good','Nothing upfront'],['good','Buyout below likely resale'],['good','No carrier lock in']],
+    cash0: -sellAsIs,
+    mo: leaseMo + careMo, moTerm:24, buyoutAt:24, buyout:buyout,
+    owedAt: function(n){ return n < 24 ? leaseMo*(24-n) + buyout : 0; },
+    worthAt: duo,
+    paidAt: function(n){ return -sellAsIs + (leaseMo+careMo)*Math.min(n,24) + (n>=24 ? buyout : 0); },
+    yearNote:'Identical true cost to buying outright, with the cash deferred two years',
+    promo:null, liquid:'Month 24, then fully free', liquidTier:'y', lockMo:24,
+    tradeIn:'Locked for two years, then the best position on this page to trade from. Once the buyout clears you own an unlocked phone with no balance and no credits hanging over it, worth about '+money(duo(24))+' at that moment. If a Duo 2 lands in autumn 2028 you are free to take it.',
+    lines: [
+      [money2(leaseMo)+' a month for 24 months, taxed', lease24],
+      ['Buyout at month 24, retail minus what you paid', buyout],
+      ['Sell the 15 Pro, cracked, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellAsIs]
+    ].concat(s.care ? [['AppleCare One, 36 months', care36]] : []),
+    story:[
+      'Apple sets the payoff at retail minus what you have already paid, which is not how leases normally work. A normal lease sets the buyout at the projected market value. This one sets it at whatever is left of the sticker.',
+      'That has a sharp consequence. The buyout is '+money(buyout)+', while the phone at 24 months is modelled to be worth '+money(duo(24))+'. The option to buy is '+money(duo(24)-buyout)+' in the money before you even decide whether you want to keep it.',
+      'So the honest reading is that this is zero percent financing on a full price purchase, with a free option to walk away if the Duo disappoints. Compare its row against path 10 in the year table: the true cost is identical at every column, and only the cash timing differs.',
+      'It still cannot be stacked with the Verizon credit, and it is still excluded from business purchase programs, so it does not combine with the company path either.'
+    ],
+    pros:[
+      'True cost identical to buying outright, with the money deferred across two years at zero percent',
+      'Nothing upfront, and the 15 Pro sale covers the first several months',
+      'The buyout is priced well below the phone\u2019s likely resale value, so the option has real value',
+      'If the Duo disappoints you return it instead and cap your loss at the lease payments',
+      'Unlocked, so no carrier lock in and a higher resale later',
+      'Apple Card holders get 3% back on the lease payments'
+    ],
+    cons:[
+      'You are turning down roughly '+money(credit)+' of Verizon subsidy to get here',
+      'Klarna owns the phone for two years and assesses damage if you hand it back',
+      'Requires a plan from AT&T, Verizon or T-Mobile, no prepaid and no MVNOs',
+      'Excluded from business purchase programs, so it cannot combine with the company path',
+      'A missed payment rolls forward, and three consecutive misses ends the agreement'
+    ]
+  });
+
+  o.push({
+    id:'outright', short:'Buy outright', months:36,
+    name:'Buy it outright and unlocked from Apple',
+    blurb:'The expensive option that buys back your freedom',
+    net: P + tax(P) - sellAsIs + care36,
+    upfront: P + tax(P) - sellAsIs,
+    lock:'None',
+    risk:'You absorb the full depreciation yourself with no subsidy',
+    pills:[['good','Zero lock in'],['good','Unlocked from day one'],['risk','Most expensive real path']],
+    cash0: P + tax(P) - sellAsIs, mo:careMo, moTerm:36, owedAt:none, worthAt:duo,
+    yearNote:'Nothing owed at any point, so the cost is purely depreciation',
+    promo:null, liquid:'Any day you like', liquidTier:'g', lockMo:0,
+    tradeIn:'Maximum flexibility from the first day. Nothing owed, nothing forfeited, an unlocked handset you can sell to anyone. If a phone you want more appears in twelve months, this is the only Duo path where you can simply take it. That freedom is what the '+money(credit)+' of carrier subsidy actually buys you out of.',
+    lines: (function(){
+      var L = [['iPhone Duo '+label(s.storage), P],['Sales tax at '+s.tax+'%', tax(P)],
+               ['Sell the 15 Pro, cracked, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellAsIs]];
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'The most expensive column on the page, and the only one where nobody has any claim on you afterwards.',
+      'What the carrier subsidy actually costs is worth naming: about '+money(credit)+' in exchange for keeping a line on a qualifying plan for 36 months. If there is any chance you move to the company plan, switch carriers, or change your line structure inside three years, you forfeit the balance and end up somewhere between here and there anyway.',
+      'If you are drawn to this, look at path 09 first. It gets you the same place with the money spread over two years at zero percent.'
+    ],
+    pros:[
+      'Zero lock in, so you can change carriers, plans, or move to the company plan any day you like',
+      'Unlocked from day one, which also means a higher price when you sell it',
+      'No credit agreement, no bill credits to forfeit, no 36 month promise',
+      'The simplest possible exit if you want to sell in a year',
+      'Nothing to reconcile if your employment or plan situation changes'
+    ],
+    cons:[
+      'You absorb the full depreciation with no subsidy against it',
+      'The largest cash outlay on the page, all at once',
+      'You are declining roughly '+money(credit)+' that is sitting there for the taking',
+      'Path 07 reaches the same destination with better cash timing, so this is rarely the right version of itself'
+    ]
+  });
+
+  o.push({
+    id:'18pro-vz', short:'18 Pro via Verizon', months:36, noDuo:true,
+    name:'iPhone 18 Pro, trade the cracked 15 Pro to Verizon',
+    blurb:'The real question hiding under all of this, taken the same way as path 01',
+    net: P18 + tax(P18) - creditCracked + lineCost + care36,
+    upfront: tax(P18),
+    lock:'36 months on myPlan',
+    risk:'You spend three years wishing you had bought the fold',
+    pills:[['good','$800 cheaper'],['good','Telephoto and Face ID'],['flag','Does not fold']],
+    cash0: tax(P18), mo: P18/36 - creditCracked/36 + addMo + careMo, moTerm:36,
+    owedAt: amort(P18,36), worthAt: p18v,
+    promo:{total:creditCracked, term:36}, liquid:'Month 36, not before', liquidTier:'r', lockMo:36,
+    yearNote:'A mature product with published repair pricing and a known resale curve',
+    tradeIn:'Same 36 month structure as the Verizon Duo paths, on a cheaper phone. Early exit forfeits credits the same way, though there is less absolute value at stake and an 18 Pro is far easier to sell than a first generation foldable.',
+    lines: (function(){
+      var L = [['iPhone 18 Pro, 256GB', P18],['Sales tax at '+s.tax+'%', tax(P18)],
+               [s.crack ? 'Verizon promo credit' : 'Market value only, promo rejected', -creditCracked]];
+      if(lineCost) L.push([lineLabel, lineCost]);
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'Same A20 Pro chip. Adds a dedicated telephoto lens and Face ID, both of which the Duo drops. Costs $800 less at every storage tier.',
+      'The Duo gives you a 7.6 inch inner display fifty percent larger than an 18 Pro Max, split view multitasking, and a genuinely new object. It takes away the telephoto, swaps Face ID for Touch ID in the side button, and gives up about six hours of rated battery life.',
+      'Put plainly: with the same Verizon credit applied, the 18 Pro lands at '+money(P18+tax(P18)-creditCracked)+' net against the Duo\u2019s '+money(P+tax(P)-creditCracked)+'. Whether the fold is worth that spread is not a financial question and this page cannot answer it.',
+      'Note the credit here is worth almost as much as the phone. At '+money(creditCracked)+' against a '+money(P18)+' handset, Verizon is covering most of an 18 Pro, which is why this row sits so low on the ladder. It is also why the lock in bites harder in proportion.'
+    ],
+    pros:[
+      '$800 less at every storage tier',
+      'Keeps the telephoto camera and Face ID that the Duo drops',
+      'About six more hours of rated battery life',
+      'Mature hardware with published repair pricing and a known resale curve',
+      'Shipped September 18, so you could have it now rather than late October',
+      'No hinge, no folding panel, nothing novel to break'
+    ],
+    cons:[
+      'It does not fold, which is the entire reason you are reading this',
+      'Smaller screen and no split view multitasking',
+      'The 15 Pro is consumed by the trade, so you see none of its value in cash',
+      'Same 36 month Verizon lock in as the Duo paths, for a less interesting phone',
+      'At two years it still puts a negative number toward your next phone'
+    ]
+  });
+
+  var co18 = P18 * (s.co / P);
+  var price18 = Math.max(0, P18 - co18);
+  var tax18 = tax(price18);
+  o.push({
+    id:'18pro-co', short:'18 Pro via company', months:36, noDuo:true,
+    name:'iPhone 18 Pro through the company, fix the crack and sell the 15 Pro',
+    blurb:'The cheap phone bought the flexible way, with your old one turned into cash',
+    net: price18 + tax18 + rep - sellFixed + care36,
+    upfront: tax18 + rep - sellFixed,
+    lock:'24 months, then yours',
+    risk:'Leaving before month 24 leaves a balance on a phone you cannot yet sell',
+    pills:[['good','No carrier agreement'],['good','Paid off in 24 months'],['flag','Discount scaled, not quoted']],
+    cash0: tax18 + rep - sellFixed, mo: price18/24 + careMo, moTerm:24,
+    paidAt: function(n){ return tax18 + rep - sellFixed + (price18/24)*Math.min(n,24) + careMo*Math.min(n,36); },
+    owedAt: amort(price18,24), worthAt: p18v,
+    promo:null, liquid:'Month 24, then yours', liquidTier:'y', lockMo:24,
+    yearNote:'Paid off at month 24, and yours outright from then on',
+    tradeIn:'Paid off at month 24 and yours from then on, with no credits to forfeit and no carrier agreement in the way. An 18 Pro is also a far easier phone to sell than a foldable, with a deep and predictable used market.',
+    lines: (function(){
+      var L = [['iPhone 18 Pro, 256GB', P18],
+               ['Corporate discount, scaled at '+(s.co/P*100).toFixed(1)+'%', -co18],
+               ['Sales tax at '+s.tax+'% on the discounted price', tax18],
+               ['Back glass repair, '+repName, rep],
+               ['Sell the repaired 15 Pro, '+(s.resale==='private'?'Swappa or local':s.resale==='ebay'?'eBay, after fees':'buyback'), -sellFixed]];
+      if(care36) L.push(['AppleCare One, 36 months', care36]);
+      return L;
+    })(),
+    story:[
+      'The cheapest phone on the page taken through the most flexible structure. No device payment plan, no 36 month promise, and your old phone turns into cash instead of disappearing into a promo credit.',
+      'One assumption to flag. The discount figure is set against the '+money(P)+' Duo. Applying it flat to a '+money(P18)+' phone would take off more than half the price, so it is scaled to the same percentage instead, landing at '+money(co18)+'. If a plan quotes a flat dollar figure or a different rate for this model, the slider moves everything.',
+      'Against the Verizon version of the same phone this costs '+money((price18+tax18+rep-sellFixed) - (P18+tax(P18)-creditCracked))+' more. That is what Verizon\u2019s '+money(creditCracked)+' credit is worth once you net off the corporate discount and the sale of your 15 Pro. You are buying your way out of three years of lock in.',
+      'Worth comparing against path 06 rather than path 01. Both are company purchases where you keep and sell the 15 Pro, so the only difference between them is '+money(P - P18)+' of phone and whether it folds.'
+    ],
+    pros:[
+      'No carrier agreement at all, so you can change plans or carriers whenever you like',
+      'You keep and sell the 15 Pro rather than feeding it to a promo',
+      'The cheapest handset here, and the easiest of any of them to resell later',
+      'Free service on the company plan, excluded from these numbers but larger than all of them',
+      'Mature hardware with published repair pricing, unlike the Duo',
+      'Nothing to forfeit if your plan or employment situation changes'
+    ],
+    cons:[
+      'It does not fold',
+      'The discount here is a proportional scaling of the Duo figure, not a quoted rate for this model',
+      'Costs more than taking the same phone through Verizon, by roughly the value of the credit',
+      'You cannot sell the phone until it is paid off at month 24',
+      'MDM enrolment on a phone you also use personally',
+      'If you leave, the phone and possibly the number go with the job'
+    ]
+  });
+
+  // number them by position and attach a standard paidAt where none was supplied
+  o.forEach(function(x, i){
+    x.idx = (i < 10 ? '0' : '') + i;
+    if(!x.paidAt){
+      x.paidAt = function(n){ return x.cash0 + x.mo * Math.min(n, x.moTerm); };
+    }
+  });
+  o.openingAsset = opening();
+  return o;
+}
+
+// ---------- render ----------
+function visible(opts){ return opts.filter(function(o){ return !hidden[o.id]; }); }
+
+function render(){
+  var opts = model();
+  var open = opts.openingAsset;
+  var vis = visible(opts);
+
+  renderChips(opts, vis);
+  renderLadder(vis, opts);
+  renderCards(vis);
+  renderYears(vis, open);
+  renderTable(vis);
+  renderWorked();
+  renderNotes(opts);
+}
+
+function renderChips(opts, vis){
+  var el = document.getElementById('chips');
+  el.innerHTML = '';
+  opts.forEach(function(o){
+    var b = document.createElement('button');
+    b.className = 'chip';
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(!hidden[o.id]));
+    b.innerHTML = '<span class="cn">' + o.idx + '</span>' + o.short;
+    b.addEventListener('click', function(){
+      hidden[o.id] = !hidden[o.id];
+      render();
+    });
+    el.appendChild(b);
+  });
+  document.getElementById('chipcount').textContent =
+    vis.length + ' of ' + opts.length + ' paths showing' +
+    (vis.length === opts.length ? '' : ', tick any to add it back');
+}
+
+function renderLadder(vis, all){
+  var lad = document.getElementById('ladder');
+  lad.innerHTML = '';
+  if(!vis.length){
+    lad.innerHTML = '<p class="empty">Nothing selected. Tick a path above to bring it back.</p>';
+    document.getElementById('ladder-read').textContent = '';
+    return;
+  }
+  var open0 = opening();
+  var metric = rankMetric(open0);
+  var real = vis.filter(function(o){ return !o.noDuo; });
+  var min = real.length ? Math.min.apply(null, real.map(metric)) : null;
+  var max = Math.max.apply(null, vis.map(metric));
+  var sorted = vis.slice().sort(function(a,b){ return metric(a) - metric(b); });
+
+  sorted.forEach(function(o){
+    var isBest = min !== null && !o.noDuo && Math.abs(metric(o) - min) < 0.5;
+    var row = document.createElement('div');
+    row.className = 'row' + (o.noDuo ? ' muted' : '');
+    var pct = Math.max(2, (metric(o) / max) * 100);
+    var r24 = stand(o, 24, open0).cost;
+    var w24 = o.worthAt(24);
+    var tag = isBest ? '<span class="tag best">' + BEST_TAG() + '</span>'
+            : (o.noDuo ? '<span class="tag">no Duo</span>' : '');
+    var eq24 = equity(o, 24);
+    var eqTxt = (o.id === 'lease-return')
+      ? 'Free swap at 2 years, but nothing to sell'
+      : money(eq24) + ' toward a new phone at 2 years';
+    var lockPct = Math.min(100, (o.lockMo / 36) * 100);
+
+    row.innerHTML =
+      '<div><div class="name">' + o.idx + '  ' + o.name + tag + '</div>' +
+      '<div class="track"><div class="fill' + (isBest?' best':'') + (o.noDuo?' dim':'') + '"></div></div>' +
+      '<div class="lockrow">' +
+        '<div class="locktrack"><i class="y1"></i><i class="y2"></i>' +
+        '<div class="lockfill' + (o.liquidTier === 'y' ? ' mid' : '') + '"></div></div>' +
+        '<span class="locklab"><span class="dot ' + o.liquidTier + '"></span>' +
+        (o.lockMo ? 'Tied up to month ' + o.lockMo : o.liquid) + '</span>' +
+        '<span class="eqlab num' + (eq24 < -0.5 && o.id !== 'lease-return' ? ' bad' : '') + '">' + eqTxt + '</span>' +
+      '</div></div>' +
+      '<div class="money">' + (
+        s.rank === 'both'
+        ? '<b class="num">' + plain((o.net + r24)/2) + '</b>' +
+          '<span>blended score</span>' +
+          '<span class="num real">' + money(o.net) + ' cash over 3 yrs</span>' +
+          '<span class="num">' + money(r24) + ' ' + REAL_SHORT() + '</span>'
+        : s.rank === 'real'
+        ? '<b class="num">' + money(r24) + '</b>' +
+          '<span class="num">' + (w24 < 0.5 ? 'holding nothing at yr 2' : 'holding ' + money(w24) + ' at yr 2') + '</span>' +
+          '<span class="num real">' + money(o.net) + ' cash over 3 yrs</span>'
+        : '<b class="num">' + money(o.net) + '</b>' +
+          '<span class="num">' + money2(o.net/o.months) + ' / mo over ' + o.months + '</span>' +
+          '<span class="num real">' + money(r24) + ' ' + REAL_SHORT() + '</span>'
+      ) + '</div>';
+    lad.appendChild(row);
+    requestAnimationFrame(function(){
+      row.querySelector('.fill').style.width = pct + '%';
+      row.querySelector('.lockfill').style.width = lockPct + '%';
+    });
+  });
+
+  var read = document.getElementById('ladder-read');
+  if(real.length < 2){
+    read.textContent = real.length === 1
+      ? 'Only one Duo path is showing, so there is nothing to rank against it.'
+      : 'No Duo paths are showing, only alternatives to buying one.';
+    return;
+  }
+  var rs = real.slice().sort(function(a,b){ return metric(a) - metric(b); });
+  var best = rs[0], worst = rs[rs.length-1];
+  read.innerHTML = (
+    s.rank === 'both'
+    ? 'Weighting cash over three years and net cost at two years equally, the best path showing is <b>' + best.name +
+      '</b> and the worst is <b>' + worst.name + '</b>. Neither number alone gets this right: cash ignores what you are left holding, and net cost ignores how much left your account to get there.'
+    : s.rank === 'real'
+    ? 'Measured on what the new phone has cost you by the two year mark, after netting off whatever you are holding, the best path showing is <b>' + best.name +
+      '</b> at ' + money(metric(best)) + ' and the worst is <b>' + worst.name + '</b> at ' + money(metric(worst)) + '. That spread is ' + money(metric(worst) - metric(best)) + '.'
+    : 'On plain cash over three years the cheapest way to hold a Duo is <b>' + best.name +
+      '</b> at ' + money(metric(best)) + '. The most expensive is <b>' + worst.name + '</b> at ' + money(metric(worst)) + '. That spread is ' + money(metric(worst) - metric(best)) + '.'
+  );
+}
+
+function renderCards(vis){
+  var cards = document.getElementById('cards');
+  cards.innerHTML = '';
+  renderSecChips();
+  if(!vis.length){
+    cards.innerHTML = '<p class="empty">Nothing selected. Tick a path above to bring it back.</p>';
+    return;
+  }
+  var open0 = opening();
+
+  vis.forEach(function(o){
+    var c = document.createElement('article');
+    c.className = 'card';
+
+    var pills = (o.pills||[]).map(function(p){
+      return '<span class="pill '+p[0]+'">'+p[1]+'</span>';
+    }).join('');
+
+    var rows = o.lines.map(function(l){
+      return '<tr><td>'+l[0]+'</td><td class="num'+(l[1]<0?' neg':'')+'">'+money(l[1])+'</td></tr>';
+    }).join('');
+
+    var st36 = stand(o, 36, opening);
+    var leaseGone = (o.id === 'lease-return');
+    var yrs = [12,24,36].map(function(n){
+      var st = stand(o, n, open0);
+      var ended = leaseGone && n === 36;
+      var eq = equity(o, n);
+      var eqTxt = ended ? 'lease already over'
+        : (leaseGone && n === 24) ? 'free swap, no equity'
+        : 'toward a new phone ' + money(eq);
+      return '<div class="yr"><div class="ylab">End of year '+(n/12)+'</div>' +
+             '<div class="yworth num">' + (ended ? 'No phone' : money(st.worth)) + '</div>' +
+             '<div class="ycost num">cost so far ' + money(st.cost) + '</div>' +
+             '<div class="ycost num'+(eq < -0.5 && !ended ? ' bad' : '')+'">' + eqTxt + '</div></div>';
+    }).join('');
+
+    var body = {
+      story: o.story.map(function(x){ return '<p>'+x+'</p>'; }).join(''),
+      math: '<table class="calc"><tbody>'+rows+
+            '<tr class="total"><td>Net over '+o.months+' months</td><td class="num">'+money(o.net)+'</td></tr>'+
+            '<tr class="sub"><td>Effective monthly</td><td class="num">'+money2(o.net/o.months)+'</td></tr>'+
+            '<tr class="sub"><td>Cash before it ships</td><td class="num">'+money(o.upfront)+'</td></tr>'+
+            '</tbody></table>',
+      years: '<div class="years">'+yrs+'</div>'+
+             '<p style="margin-top:11px;font-size:12.5px;color:var(--muted)">'+o.yearNote+'</p>'+
+             '<h5 style="margin:16px 0 7px;font-size:12px;font-variation-settings:\'wght\' 700">'+
+             'If you want a new phone before this one is done</h5>'+
+             '<p style="font-size:13.5px">'+o.tradeIn+'</p>',
+      pc: '<div class="pcbody">'+
+          '<div><h5 class="p">What is good about it</h5><ul>'+
+          o.pros.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'+
+          '<div><h5 class="c">What is not</h5><ul>'+
+          o.cons.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div></div>'
+    };
+
+    var peek = {
+      story: '',
+      math: money(o.net)+' net, '+money(o.upfront)+' upfront',
+      years: 'free to upgrade ' + o.liquid.toLowerCase(),
+      pc: o.pros.length+' for, '+o.cons.length+' against'
+    };
+
+    var blocks = SECTIONS.map(function(sec){
+      return '<details class="dd" data-id="'+o.id+'" data-k="'+sec.k+'"'+(isOpen(o.id,sec.k)?' open':'')+'>'+
+             '<summary><span class="caret"></span>'+sec.label+
+             (peek[sec.k] ? '<span class="peek num">'+peek[sec.k]+'</span>' : '')+'</summary>'+
+             '<div class="ddbody">'+body[sec.k]+'</div></details>';
+    }).join('');
+
+    c.innerHTML =
+      '<div class="cardhead"><div class="idx num">'+o.idx+'</div>'+
+      '<div><h3>'+o.name+'</h3><p>'+o.blurb+'</p><div class="pills">'+pills+'</div></div>'+
+      '<div class="head-money"><b class="num">'+money(o.net)+'</b>'+
+      '<span class="num">net over '+o.months+' months</span>'+
+      '<div class="headsub num">'+money2(o.net/o.months)+' a month, '+money(o.upfront)+' upfront</div></div></div>'+
+      '<div class="cardbody"><div class="spine"><span class="k1"></span><span class="k2"></span></div>'+
+      '<div class="secs">'+blocks+'</div></div>';
+
+    Array.prototype.forEach.call(c.querySelectorAll('details.dd'), function(dEl){
+      dEl.addEventListener('toggle', function(){
+        secOpen[dEl.dataset.id + ':' + dEl.dataset.k] = dEl.open;
+        renderSecChips();
+      });
+    });
+    cards.appendChild(c);
+  });
+}
+
+function renderSecChips(){
+  var el = document.getElementById('secchips');
+  if(!el) return;
+  el.innerHTML = '';
+  SECTIONS.forEach(function(sec){
+    var b = document.createElement('button');
+    b.className = 'chip';
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(!!secDefault[sec.k]));
+    b.textContent = sec.label;
+    b.addEventListener('click', function(){
+      secDefault[sec.k] = !secDefault[sec.k];
+      clearOverrides(sec.k);
+      render();
+    });
+    el.appendChild(b);
+  });
+  var on = SECTIONS.filter(function(x){ return secDefault[x.k]; }).length;
+  document.getElementById('seccount').textContent =
+    on === 0 ? 'Everything collapsed, showing headline numbers only'
+    : on === SECTIONS.length ? 'All four blocks open on every card'
+    : on + ' of ' + SECTIONS.length + ' blocks open by default';
+}
+
+function clearOverrides(k){
+  Object.keys(secOpen).forEach(function(key){
+    if(key.slice(key.indexOf(':')+1) === k) delete secOpen[key];
+  });
+}
+
+// What this phone contributes toward the next one if you jump at month n:
+// its resale value, less any balance you must settle, less promo credits you forfeit.
+function forfeited(o, n){
+  if(!o.promo) return 0;
+  return o.promo.total * Math.max(0, o.promo.term - n) / o.promo.term;
+}
+function equity(o, n){
+  return o.worthAt(n) - o.owedAt(n) - forfeited(o, n);
+}
+
+// worth / owed / paid / true cost at month n
+function stand(o, n, opening){
+  var worth = o.worthAt(n);
+  var owed = o.owedAt(n);
+  var paid = o.paidAt(n);
+  return { worth:worth, owed:owed, paid:paid, cost: opening + paid + owed - worth };
+}
+
+function renderYears(vis, opening){
+  var tb = document.getElementById('ybody');
+  tb.innerHTML = '';
+  if(!vis.length){
+    tb.innerHTML = '<tr><td colspan="5" class="dimcell">Nothing selected. Tick a path above to bring it back.</td></tr>';
+    document.getElementById('viewnote').textContent = '';
+    return;
+  }
+  var key = s.view;
+  vis.forEach(function(o){
+    var cells = [12,24,36].map(function(n){
+      var st = stand(o, n, opening);
+      var leaseGone = (o.id === 'lease-return');
+      if(key === 'equity'){
+        if(leaseGone && n === 36) return 'Over';
+        if(leaseGone && n === 24) return 'Free swap';
+        return money(equity(o, n));
+      }
+      if(leaseGone && n === 36 && key === 'worth') return 'No phone';
+      if(key === 'worth') return money(st.worth);
+      if(key === 'owed')  return st.owed < 0.5 ? 'Nothing' : money(st.owed);
+      return money(st.cost);
+    });
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td class="strong">'+o.idx+'  '+o.name+'</td>' +
+      cells.map(function(c){
+        var bad = (key === 'equity' && c.indexOf('\u2212') === 0);
+        return '<td class="r num'+(bad?' bad':'')+'">'+c+'</td>';
+      }).join('') +
+      '<td class="dimcell">'+o.yearNote+'</td>';
+    tb.appendChild(tr);
+  });
+
+  document.getElementById('viewnote').textContent =
+    s.view === 'worth' ? 'What you could sell whatever you are holding for, privately, in that month. The Duo starts at '+money(PRICES[s.storage])+' and the curve control decides how fast that falls.'
+    : s.view === 'owed' ? 'What you would have to pay to walk away clean. For the Verizon paths this is the unpaid device balance, and any promo credits you have not yet received are forfeited on top. For the lease paths it is the remaining payments, plus the buyout if you intend to keep the phone.'
+    : s.view === 'cost' ? 'Everything you have put in, plus anything still owed, minus what you are holding, measured against starting today with a cracked 15 Pro worth '+money(opening)+'. It is the honest answer to what the whole exercise cost if you stopped at that point.'
+    : 'If a phone you want more appears in that month, this is what the Duo contributes toward it: resale value, less any balance you must settle, less every promo credit you have not yet received. A negative number means the old phone costs you money before you have spent a cent on the new one. This is the column that separates the paths that merely cost more from the paths that trap you.';
+}
+
+function renderWorked(){
+  var opts = model(), open0 = opening();
+  function pick(id){ for(var i=0;i<opts.length;i++) if(opts[i].id===id) return opts[i]; }
+  [['a','co-crack'],['b','lease-return']].forEach(function(pair){
+    var k = pair[0], o = pick(pair[1]);
+    if(!o) return;
+    var paid = o.paidAt(24), owed = o.owedAt(24), worth = o.worthAt(24);
+    var sale = resale(pair[1] === 'co-crack' ? 'fixed' : 'asis');
+    var set = function(n, v){ var el = document.getElementById('wx-'+k+n); if(el) el.textContent = v; };
+    var r1 = document.getElementById('wx-'+k+'1r');
+    if(r1) r1.style.display = s.countOld ? '' : 'none';
+    var lab = document.getElementById('wx-'+k+'6l');
+    if(lab) lab.textContent = s.countOld ? 'Poorer than today' : 'Net cost by year 2';
+    set(1, money(open0));
+    set(2, money(paid + sale));
+    set(3, money(-sale));
+    set(4, owed < 0.5 ? 'Nothing' : money(owed));
+    set(5, worth < 0.5 ? 'Nothing to sell' : money(-worth));
+    set(6, money(open0 + paid + owed - worth));
+  });
+}
+
+function renderTable(vis){
+  var tb = document.getElementById('tbody');
+  tb.innerHTML = '';
+  if(!vis.length){
+    tb.innerHTML = '<tr><td colspan="7" class="dimcell">Nothing selected. Tick a path above to bring it back.</td></tr>';
+    return;
+  }
+  var metric = rankMetric(opening());
+  var real = vis.filter(function(o){ return !o.noDuo; });
+  var min = real.length ? Math.min.apply(null, real.map(metric)) : null;
+  vis.slice().sort(function(a,b){ return metric(a) - metric(b); }).forEach(function(o){
+    var isBest = min !== null && !o.noDuo && Math.abs(metric(o)-min) < 0.5;
+    var eq24 = equity(o, 24);
+    var eqTxt = (o.id === 'lease-return') ? 'Free swap' : money(eq24);
+    var real24 = stand(o, 24, opening()).cost;
+    var worth24 = o.worthAt(24);
+    var tr = document.createElement('tr');
+    if(isBest) tr.className = 'hl';
+    tr.innerHTML =
+      '<td class="strong">'+o.idx+'  '+o.name+'</td>' +
+      '<td class="r strong num">'+money(o.net)+'</td>' +
+      '<td class="r num">'+money(real24) +
+        '<span class="npv">'+(worth24 < 0.5 ? 'holding nothing' : 'holding '+money(worth24))+'</span></td>' +
+      '<td class="r num">'+money2(o.net/o.months)+'</td>' +
+      '<td class="r num">'+money(o.upfront)+'</td>' +
+      '<td class="nw"><span class="dot '+o.liquidTier+'"></span>'+o.liquid+'</td>' +
+      '<td class="r num'+(eq24 < -0.5 && o.id !== 'lease-return' ? ' bad' : '')+'">'+eqTxt+'</td>' +
+      '<td>'+o.risk+'</td>';
+    tb.appendChild(tr);
+  });
+}
+
+function renderNotes(opts){
+  var P = PRICES[s.storage];
+  document.getElementById('f-price').textContent = money(P);
+  document.getElementById('f-resid').textContent = money(P * CURVE[s.curve][2]);
+  document.getElementById('f-credit').textContent = money(s.vzc);
+  document.getElementById('th-real').textContent = REAL_LONG();
+  document.getElementById('btn-real').textContent = s.countOld
+    ? 'Rank by how much poorer at 2 years' : 'Rank by net cost at 2 years';
+  document.getElementById('n-countOld').textContent = s.countOld
+    ? 'Counting it treats giving up your '+money(resale('asis'))+' phone as part of the cost, which makes the figure a true change in your net worth. It adds the same '+money(resale('asis'))+' to every path, so no ranking moves.'
+    : 'Off, so your 15 Pro is treated as something you already have rather than a cost. The figure becomes what getting the new phone cost you once you net off the sale proceeds and whatever you end up holding. Negative means the transaction left you ahead of where the cash went in.';
+  document.getElementById('n-storage').textContent =
+    s.storage===256 ? 'The step to 512GB is $200, about $5.56 a month across three years. Screen size does not drive storage, so open Settings, General, iPhone Storage on your 15 Pro and read the number. If you are comfortable in 256GB today you will be comfortable in 256GB here.'
+    : s.storage===512 ? '$200 over the base. Worth it if your 15 Pro sits above roughly 200GB used today, or if you shoot a lot of 4K and keep it on the device rather than in iCloud.'
+    : s.storage===1024 ? '$600 over the base. Only sensible if you keep a full video library offline, or if Apple Pencil support turns this into a working surface for large files later this year.'
+    : '$1,200 over the base, or 60% on top of the phone. New to iPhone this year and genuinely niche. Very few people fill 1TB.';
+  document.getElementById('n-curve').textContent =
+    s.curve==='iphone' ? 'iPhones hold about 74%, 57% and 44% of retail at one, two and three years. Apple claims the Duo holds value better than other smartphones.'
+    : 'Foldables have historically depreciated faster than slab phones, because the used buyer pool is thinner and hinge wear worries people. This applies 62%, 44% and 32%.';
+  var bonusTxt = (s.vz==='addline') ? ADDLINE_BONUS : 0;
+  document.getElementById('n-vz').textContent =
+    s.vz==='upgrade' ? 'Upgrading an existing line. Credits land across 36 bills and stop the moment you change plans.'
+    : 'Adding a line paid about $'+ADDLINE_BONUS+' more at launch, but a second line runs roughly $20 a month. Over 36 months that costs $720 to capture $'+ADDLINE_BONUS+', which is why it ranks worse.';
+  document.getElementById('n-co').textContent =
+    'Assumed discount off the retail price on a company purchase. Set it to whatever your own plan actually offers. '+
+    'On the iPhone 18 Pro rows it is scaled to the same percentage rather than applied as a flat figure, since a flat cut sized for a '+
+    money(PRICES[s.storage])+' phone would be more than half the price of a '+money(P18)+' one.';
+  document.getElementById('n-vzc').textContent =
+    'Verizon advertised up to $1,020 upgrading a line, but that is the top tier and a three year old Pro sits at $'+s.vzc.toLocaleString('en-US')+'. '+
+    'That tells you the tiers are graded by device value rather than flat, which is exactly what the filler phone trick needed them not to be. '+
+    'The filler figure is a guess, since a phone cheap enough to buy for this would sit well below a three year old flagship.'+
+    (bonusTxt ? ' Adding a line lifts both by about $'+bonusTxt+'.' : '');
+  document.getElementById('n-repair').textContent =
+    s.repair==='apple' ? 'Genuine panel, no non genuine part warning in iOS, and it resells for about $30 more. You pay $89 to $119 over the other two routes for that.'
+    : s.repair==='local' ? 'A walk in shop, usually same day. Aftermarket panel, so iOS will flag it and buyers will notice.'
+    : 'Mail in services run about $50 for a 15 Pro back glass. Cheapest route and the only one that clearly pays for itself on resale, but the phone is gone for several days.';
+  document.getElementById('n-p15').textContent =
+    'Anchor value: crack fixed with an aftermarket panel, battery still at 79%, sold privately. '+
+    'Everything else moves off it. A cracked back knocks off '+money(CRACK_HIT)+', an Apple panel adds '+
+    money(GENUINE_UP)+', a fresh battery adds '+money(BATT_UP)+'. Swappa lists a 15 Pro from $438 as of September, '+
+    'and that is the cheapest 128GB in fair condition, so a clean 256GB sits well above it.';
+  document.getElementById('n-resale').textContent =
+    s.resale==='private' ? 'Swappa or a local cash sale. Swappa charges the buyer, not you, so the listed price is roughly what you keep. One to three weeks and you deal with buyers.'
+    : s.resale==='ebay' ? 'eBay asks run about 12% higher than Swappa, then takes 13.25% in fees and you pay shipping. On this phone that nets '+money(resale('fixed'))+' against '+money(s.p15 + (s.repair==='apple'?GENUINE_UP:0))+' on Swappa, so the higher sticker is a mirage.'
+    : 'Instant quote, prepaid box, money in days, at roughly 79% of what a private sale brings. Worth it if you want this settled before October 23.';
+  document.getElementById('n-tax').textContent =
+    'Rates vary by county and by city, often by two points or more inside one metro area. On a '+money(P)+' Duo each point is '+money(P*0.01)+
+    ', so the spread between the presets is worth '+money(P*0.029)+'. Tax is usually sourced to the delivery address for online orders and to the store location in person, so where you buy can matter more than where you live.';
+  document.getElementById('cx-gap').textContent =
+    money(s.vzc + ((s.vz==='addline')?ADDLINE_BONUS:0) - VZ_FALLBACK);
+  document.getElementById('cx-repair').textContent =
+    'At your current setting that is ' + money(REPAIR[s.repair]) + ' spent to protect ' +
+    money(s.vzc + ((s.vz==='addline')?ADDLINE_BONUS:0) - VZ_FALLBACK) + ' of credit, a ' +
+    Math.round((s.vzc + ((s.vz==='addline')?ADDLINE_BONUS:0) - VZ_FALLBACK)/REPAIR[s.repair]) + ' to 1 payoff.';
+}
+
+// ---------- wiring ----------
+function seg(id, key, cast){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if(!b || !b.dataset.v) return;
+    s[key] = cast ? cast(b.dataset.v) : b.dataset.v;
+    sync(); render();
+  });
+}
+function sync(){
+  [['seg-storage','storage'],['seg-crack','crack'],['seg-curve','curve'],['seg-vz','vz'],
+   ['seg-repair','repair'],['seg-resale','resale'],['seg-care','care'],['seg-view','view'],
+   ['seg-rank','rank'],['seg-countOld','countOld']].forEach(function(p){
+    var el = document.getElementById(p[0]);
+    Array.prototype.forEach.call(el.querySelectorAll('button'), function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.v) === String(s[p[1]]));
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#seg-tax button'), function(b){
+    b.setAttribute('aria-pressed', Number(b.dataset.v) === s.tax);
+  });
+  document.getElementById('v-co').textContent = '$' + s.co.toLocaleString('en-US');
+  document.getElementById('v-p15').textContent = '$' + s.p15.toLocaleString('en-US');
+  document.getElementById('v-vzc').textContent = '$' + s.vzc.toLocaleString('en-US') + ' / $' + s.vzf.toLocaleString('en-US');
+  document.getElementById('r-vzc').value = s.vzc;
+  document.getElementById('r-vzf').value = s.vzf;
+  document.getElementById('r-co').value = s.co;
+  document.getElementById('r-p15').value = s.p15;
+  document.getElementById('r-tax').value = s.tax;
+
+  document.getElementById('v-tax').textContent = s.tax.toFixed(2) + '%';
+
+  var FV = {
+    storage: label(s.storage),
+    crack:   s.crack ? 'Passes' : 'Downgraded',
+    curve:   s.curve === 'iphone' ? 'iPhone curve' : 'Foldable curve',
+    vz:      s.vz === 'upgrade' ? 'Upgrade line' : 'Add a line',
+    repair:  s.repair === 'apple' ? 'Apple, $169' : s.repair === 'local' ? 'Shop, $80' : 'Mail in, $50',
+    resale:  s.resale === 'private' ? 'Swappa or local' : s.resale === 'ebay' ? 'eBay' : 'Buyback',
+    care:    s.care ? 'Included' : 'Left out',
+    countOld: s.countOld ? 'Counted' : 'Not counted'
+  };
+  Object.keys(FV).forEach(function(k){
+    var el = document.getElementById('fv-' + k);
+    if(el) el.textContent = FV[k];
+  });
+}
+
+function setFields(open){
+  Array.prototype.forEach.call(document.querySelectorAll('details.field'), function(d){ d.open = open; });
+}
+
+seg('seg-storage','storage',Number); seg('seg-crack','crack',Number);
+seg('seg-curve','curve'); seg('seg-vz','vz'); seg('seg-repair','repair');
+seg('seg-resale','resale'); seg('seg-care','care',Number);
+seg('seg-tax','tax',Number); seg('seg-view','view'); seg('seg-rank','rank');
+seg('seg-countOld','countOld',Number);
+
+document.getElementById('r-co').addEventListener('input', function(e){ s.co = Number(e.target.value); sync(); render(); });
+document.getElementById('r-p15').addEventListener('input', function(e){ s.p15 = Number(e.target.value); sync(); render(); });
+document.getElementById('r-vzc').addEventListener('input', function(e){ s.vzc = Number(e.target.value); sync(); render(); });
+document.getElementById('r-vzf').addEventListener('input', function(e){ s.vzf = Number(e.target.value); sync(); render(); });
+document.getElementById('r-tax').addEventListener('input', function(e){ s.tax = Number(e.target.value); sync(); render(); });
+document.getElementById('cExpand').addEventListener('click', function(){ setFields(true); });
+document.getElementById('cCollapse').addEventListener('click', function(){ setFields(false); });
+document.getElementById('cNotes').addEventListener('click', function(e){
+  var ctrl = document.getElementById('ctrl');
+  var on = !ctrl.classList.toggle('nohelp');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  e.currentTarget.textContent = on ? 'Help text' : 'Help text off';
+});
+
+document.getElementById('reset').addEventListener('click', function(){
+  s = Object.assign({}, DEFAULTS); hidden = onlyShortlist(); secOpen = {};
+  secDefault = {story:true, math:true, years:true, pc:false};
+  var ctrl = document.getElementById('ctrl');
+  ctrl.classList.remove('nohelp');
+  var nb = document.getElementById('cNotes');
+  nb.setAttribute('aria-pressed','true'); nb.textContent = 'Help text';
+  setFields(window.innerWidth >= 980);
+  sync(); render();
+});
+document.getElementById('showall').addEventListener('click', function(){ hidden = {}; render(); });
+document.getElementById('secall').addEventListener('click', function(){
+  SECTIONS.forEach(function(x){ secDefault[x.k] = true; clearOverrides(x.k); }); render();
+});
+document.getElementById('secnone').addEventListener('click', function(){
+  SECTIONS.forEach(function(x){ secDefault[x.k] = false; clearOverrides(x.k); }); render();
+});
+document.getElementById('hideall').addEventListener('click', function(){
+  model().forEach(function(o){ hidden[o.id] = true; }); render();
+});
+document.getElementById('showyours').addEventListener('click', function(){
+  hidden = onlyShortlist(); render();
+});
+
+if(window.innerWidth < 980) setFields(false);
+sync();
+render();
+})();
+
+</script>
+</body>
+</html>
